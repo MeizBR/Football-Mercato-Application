@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.header {
+  text-align: center;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+}
+
+.hero {
+  background: #c00;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  background: #f4f4f4;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.6)
+  );
+}
+
+.hero-image {
+  width: 98%;
+  height: 450px;
+  animation: pulseHero 4s infinite ease-in-out;
+}
+
+@keyframes pulseHero {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.clubs-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  border-bottom: 2px solid red;
+}
+
+.club-logo {
+  width: 50px;
+  height: 50px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px;
+}
+
+.transfer-card {
+  border: 2px solid crimson;
+  padding: 15px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.card-image {
+  height: 200px;
+  background: #eaeaea;
+  margin-bottom: 20px;
+}
+
+.card-image img {
+  border: 3px solid red;
+  border-radius: 5px;
+}
+
+.transfer-card .card-content {
+  margin-top: 20px;
+}
+
+.transfer-card .card-content .card-title {
+  font-weight: bold;
+  background-color: crimson;
+  color: white;
+  padding: 1px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.transfer-card .card-content p {
+  text-align: center;
+}
+
+.footer {
+  padding: 40px;
+  background: #f4f4f4;
+  text-align: center;
+  border: 2px solid crimson;
+}
+
+.playwrite-nz-basic {
+  font-family: "Playwrite NZ Basic", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.footer h6 {
+  margin-top: 20px;
+  color: gray;
+}
+
+.playwrite-cu-guides-regular {
+  font-family: "Playwrite CU Guides", cursive;
+  font-weight: 400;
+  font-style: normal;
+}

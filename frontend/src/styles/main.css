@@ -55,6 +55,8 @@ body {
 .hero-image {
   width: 98%;
   height: 450px;
+  border: 2px solid palevioletred;
+  border-radius: 5px;
   animation: pulseHero 4s infinite ease-in-out;
 }
 
@@ -110,6 +112,7 @@ body {
 
 .transfer-card .card-content {
   margin-top: 20px;
+  width: 100%;
 }
 
 .transfer-card .card-content .card-title {
@@ -148,4 +151,12 @@ body {
   font-family: "Playwrite CU Guides", cursive;
   font-weight: 400;
   font-style: normal;
+}
+
+.dancing-script {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 23px;
 }

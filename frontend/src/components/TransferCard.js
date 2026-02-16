@@ -1,6 +1,17 @@
 import React from "react";
 
 function TransferCard({ transfer }) {
+
+  const formattedDate = new Date(transfer.Date).toLocaleDateString(
+    "en-US",
+    {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  );
+
   return (
     <div className="transfer-card">
       <div className="card-image">
@@ -8,11 +19,11 @@ function TransferCard({ transfer }) {
       </div>
       <hr />
       <div className="card-content">
-        <div className="card-title">Date</div>
-        <p>{transfer.Date}</p>
-        <div className="card-title">Title</div>
+        <div className="card-title dancing-script">Date</div>
+        <p>{formattedDate}</p>
+        <div className="card-title dancing-script">Title</div>
         <p>{transfer.Title}</p>
-        <div className="card-title">Content</div>
+        <div className="card-title dancing-script">Content</div>
         <p> {transfer.Content}</p>
       </div>
     </div>

@@ -1,13 +1,23 @@
 from bs4 import BeautifulSoup
+import re
 import requests
 import json
 
+# Windows headers
+# headers = {
+#     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36',
+# }
+
+# Linux headers
 headers = {
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36',
+    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
 }
 
-url = "https://www.transfermarkt.com/castello-lukeba/profil/spieler/618472"
-player_id = url.split('/')[-1]
+player_id = 780136
+player_name = "aleksandar-stankovic"
+url = "https://www.transfermarkt.com/" + player_name + "/profil/spieler/" + str(player_id)
+
+print(f"Fetching data for player Name: {player_name}, Player ID: {player_id} from URL: {url}")
 
 response = requests.get(url, headers=headers)
 
@@ -17,44 +27,46 @@ player_name = soup.select_one('h1[class="data-header__headline-wrapper"]').text.
 player_number = soup.select_one('span[class="data-header__shirt-number"]').text.strip().replace('#', '')
 player_club = soup.select_one('span[class="data-header__club"]').text.strip()
 club_league = soup.select_one('span[class="data-header__league"]').text.strip()
+player_international_squad = re.search("Current international:.*?([A-z].*?)\n", soup.text, re.DOTALL).group(1).strip()
 
-# print (f"Player ID: {player_id}")
-# print(f"Player Name: {player_name}")
-# print(f"Player Number: {player_number}")
-# print(f"Player Club: {player_club}")
-# print(f"Club League: {club_league}")
+print (f"Player ID: {player_id}")
+print(f"Player Name: {player_name}")
+print(f"Player Number: {player_number}")
+print(f"Player Club: {player_club}")
+print(f"Club League: {club_league}")
+print(f"Player International Squad: {player_international_squad}")
 
-# print("Current Rumours:")
 
-# club_rumour = requests.get(
-#         'https://www.transfermarkt.com/ceapi/currentRumors/player/618472/',
-#         headers=headers
-# ).json()
+print("Current Rumours:")
 
-# rumors = club_rumour["rumors"]
-# for rumor in rumors:
-#     club = rumor["club"]
-#     name = club["name"]
-#     competition = club["competitionName"]
+club_rumour_url = "https://www.transfermarkt.com/ceapi/currentRumors/player/" + str(player_id) + "/"
 
-#     print(f"Club: {name}, Competition: {competition}")
-
-# print("Player Career:")
-
-player_career = requests.get(
-        'https://tmapi-alpha.transfermarkt.technology/clubs?ids[]=1041&ids[]=23826&ids[]=12764&ids[]=7813&ids[]=69570',
+club_rumour = requests.get(
+        club_rumour_url,
         headers=headers
 ).json()
 
-# player_history = soup.select_one('a[class="tm-player-transfer-history-grid__club-link"]').text.strip()
-# player_history = soup.find_all('a')
+rumors = club_rumour["rumors"]
+for rumor in rumors:
+    club = rumor["club"]
+    name = club["name"]
+    competition = club["competitionName"]
 
-# print(f"Player History: {player_history}")
+    print(f"Club: {name}, Competition: {competition}")
 
-# soup_1 = BeautifulSoup('<img src="https://img.a.transfermarkt.technology/portrait/header/618472-1713897532.jpg?lm=1" title="Castello Lukeba" alt="Castello Lukeba" class="data-header__profile-image" height="181" width="139">', "lxml")
 
-# tag = soup_1.img
-# print(tag['src'])
+player_joined_date = re.search("Joined: (.*)", soup.text).group(1)
+player_contract_expiry = re.search("Contract expires: (.*)", soup.text).group(1)
+player_birthplace = re.search("Place of birth:.*?([A-z].*?) ", soup.text, re.DOTALL).group(1).strip()
+player_agent = re.search("Agent:.*?([A-z].*?)\n", soup.text, re.DOTALL).group(1).strip()
+player_height = re.search("Height:.*?([0-9].*?)\n", soup.text, re.DOTALL).group(1).strip()
+player_citizenship = re.search("Citizenship:.*?([A-z].*?)\n", soup.text, re.DOTALL).group(1).strip()
+player_position = re.search("Position:.*?([A-z].*?)\n", soup.text, re.DOTALL).group(1).strip()
 
-player_history = soup.select_one('ul[class="data-header__items"]').text.strip()
-print(player_history)
+print(f"Player Joined Date: {player_joined_date}")
+print(f"Player Contract Expiry: {player_contract_expiry}")
+print(f"Player Birthplace: {player_birthplace}")
+print(f"Player Agent: {player_agent}")
+print(f"Player Height: {player_height}")
+print(f"Player Citizenship: {player_citizenship}")
+print(f"Player Position: {player_position}")

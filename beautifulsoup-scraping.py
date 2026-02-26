@@ -4,6 +4,8 @@ import requests
 import json
 from fastapi import FastAPI
 
+import market_value_history
+
 # Windows headers
 # headers = {
 #     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36',
@@ -112,27 +114,36 @@ def get_player(player_id: int):
             "id": player_id,
             "name": player_name,
             "number": player_number,
-            "club": player_club,
-            "league": club_league,
-            "club_league_level": player_club_league_level.strip(),
-            "club_image_url": f"https://tmssl.akamaized.net//images/wappen/normquad/{club_id}.png?lm=1716279106",
             "international_squad": player_international_squad,
-            "joined_date": player_joined_date,
-            "contract_expiry": player_contract_expiry,
             "birthplace": player_birthplace,
             "agent": player_agent,
             "height": player_height,
             "citizenship": player_citizenship,
             "position": player_position,
             "image_url": player_image_url,
-            "further_information": {
+        },
+        "club": {
+            "club": player_club,
+            "league": club_league,
+            "club_league_level": player_club_league_level.strip(),
+            "club_image_url": f"https://tmssl.akamaized.net//images/wappen/normquad/{club_id}.png?lm=1716279106",
+            "joined_date": player_joined_date,
+            "contract_expiry": player_contract_expiry,
+        },
+        "further_information": {
                 f"information {i+1}": player_further_information_list[i] for i in range(len(player_further_information_list) - 1)
-            },
-            "rumours": {
+        },
+        "rumours": {
                 f"rumour {i+1}": {
                     "club": rumours[i]["club"],
                     "competition": rumours[i]["competition"]
                 } for i in range(len(rumours))
-            }
         },
+        "market_value_history": {
+                f"market_value_{i+1}": {
+                    "amount": market_value_history.fetch_market_value_history(player_id, headers)[i]["amount"],
+                    "currency": market_value_history.fetch_market_value_history(player_id, headers)[i]["currency"],
+                    "date": market_value_history.fetch_market_value_history(player_id, headers)[i]["date"]
+                } for i in range(len(market_value_history.fetch_market_value_history(player_id, headers)))
+        }
     }

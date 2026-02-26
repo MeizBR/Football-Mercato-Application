@@ -8,6 +8,16 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.bak
+*.backup
+*.tmp
+*.swp
 
 # ========================
 # Environment Variables

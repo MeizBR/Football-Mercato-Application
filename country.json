@@ -1,0 +1,12 @@
+[
+    {
+        "country_name": "Belgium",
+        "country_code": "BE",
+        "clubs": [
+            {
+                "club_id": 2282,
+                "club_name": "Club Brugge"
+            }
+        ]
+    }
+]

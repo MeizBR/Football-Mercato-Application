@@ -5,6 +5,7 @@ import json
 from fastapi import FastAPI
 
 import market_value_history
+import transfer_history
 
 # Windows headers
 # headers = {
@@ -16,8 +17,8 @@ headers = {
     'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
 }
 
-player_id = 780136
-player_name = "aleksandar-stankovic"
+player_id = 566799
+player_name = "james-trafford"
 url = "https://www.transfermarkt.com/" + player_name + "/profil/spieler/" + str(player_id)
 
 print(f"Fetching data for player Name: {player_name}, Player ID: {player_id} from URL: {url}")
@@ -91,7 +92,7 @@ player_further_information_list = player_further_information.split('.')
 print(f"Player Further Information: {player_further_information_list}")
 
 # Print the name of the club from the given id
-Club_id = 0
+club_id = 0
 with open("club-ids-to-names.json", "r") as f:
     club_ids_to_names = json.load(f)
     for club in club_ids_to_names:
@@ -145,5 +146,30 @@ def get_player(player_id: int):
                     "currency": market_value_history.fetch_market_value_history(player_id, headers)[i]["currency"],
                     "date": market_value_history.fetch_market_value_history(player_id, headers)[i]["date"]
                 } for i in range(len(market_value_history.fetch_market_value_history(player_id, headers)))
+        },
+        "transfer_history" : {
+                f"transfer_{i+1}": {
+                    "transfer_source": {
+                        "competition_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_source"]["competition_id"],
+                        "country_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_source"]["country_id"],
+                        "club_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_source"]["club_id"],
+                    },
+                    "transfer_destination": {
+                        "competition_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_destination"]["competition_id"],
+                        "country_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_destination"]["country_id"],
+                        "club_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_destination"]["club_id"],
+                    },
+                    "date": transfer_history.get_transfer_history(player_id, headers)[i]["date"],
+                    "contract_until_date": transfer_history.get_transfer_history(player_id, headers)[i]["contract_until_date"],
+                    "season_id": transfer_history.get_transfer_history(player_id, headers)[i]["season_id"],
+                    "market_value": {
+                        "amount": transfer_history.get_transfer_history(player_id, headers)[i]["market_value"]["amount"],
+                        "currency": transfer_history.get_transfer_history(player_id, headers)[i]["market_value"]["currency"],
+                    },
+                    "fee" : {
+                        "amount": transfer_history.get_transfer_history(player_id, headers)[i]["fee"]["amount"],
+                        "currency": transfer_history.get_transfer_history(player_id, headers)[i]["fee"]["currency"],
+                    }
+                } for i in range(len(transfer_history.get_transfer_history(player_id, headers)))
         }
     }

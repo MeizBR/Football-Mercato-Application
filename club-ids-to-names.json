@@ -2,5 +2,9 @@
     {
         "club_id": 2282,
         "club_name": "Club Brugge"
+    },
+    {
+        "club_id": 281,
+        "club_name": "Manchester City"
     }
 ]

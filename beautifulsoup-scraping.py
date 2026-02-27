@@ -127,7 +127,7 @@ def get_player(player_id: int):
             "club": player_club,
             "league": club_league,
             "club_league_level": player_club_league_level.strip(),
-            "club_image_url": f"https://tmssl.akamaized.net//images/wappen/normquad/{club_id}.png?lm=1716279106",
+            "club_image_url": f"https://tmssl.akamaized.net//images/wappen/head/{club_id}.png",
             "joined_date": player_joined_date,
             "contract_expiry": player_contract_expiry,
         },
@@ -151,13 +151,18 @@ def get_player(player_id: int):
                 f"transfer_{i+1}": {
                     "transfer_source": {
                         "competition_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_source"]["competition_id"],
-                        "country_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_source"]["country_id"],
+                        "country_id": transfer_history.get_transfer_history(player_id, headers)[i]
+                        ["transfer_source"]["country_id"],
+                        "country_flag": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_source"]["country_flag"],
                         "club_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_source"]["club_id"],
+                        "club_logo": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_source"]["club_logo"],
                     },
                     "transfer_destination": {
                         "competition_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_destination"]["competition_id"],
                         "country_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_destination"]["country_id"],
+                        "country_flag": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_destination"]["country_flag"],
                         "club_id": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_destination"]["club_id"],
+                        "club_logo": transfer_history.get_transfer_history(player_id, headers)[i]["transfer_destination"]["club_logo"],
                     },
                     "date": transfer_history.get_transfer_history(player_id, headers)[i]["date"],
                     "contract_until_date": transfer_history.get_transfer_history(player_id, headers)[i]["contract_until_date"],

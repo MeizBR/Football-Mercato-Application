@@ -25,12 +25,16 @@ def get_transfer_history(player_id, headers):
             "transfer_source": {
                 "competition_id": transfer["transferSource"]["competitionId"],
                 "country_id": transfer["transferSource"]["countryId"],
+                "country_flag": "https://tmssl.akamaized.net/images/flagge/originals/" + str(transfer["transferSource"]["countryId"]) + ".png",
                 "club_id": transfer["transferSource"]["clubId"],
+                "club_logo": "https://tmssl.akamaized.net//images/wappen/head/" + str(transfer["transferSource"]["clubId"]) + ".png"
             },
             "transfer_destination": {
                 "competition_id": transfer["transferDestination"]["competitionId"],
                 "country_id": transfer["transferDestination"]["countryId"],
+                "country_flag": "https://tmssl.akamaized.net/images/flagge/originals/" + str(transfer["transferDestination"]["countryId"]) + ".png",
                 "club_id": transfer["transferDestination"]["clubId"],
+                "club_logo": "https://tmssl.akamaized.net//images/wappen/head/" + str(transfer["transferDestination"]["clubId"]) + ".png"
             },
             "date": transfer["details"]["date"],
             "contract_until_date": transfer["details"]["contractUntilDate"],

@@ -1,12 +1,5 @@
 import requests
 
-# Linux headers
-headers = {
-    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
-}
-
-player_id = 566799
-
 def get_transfer_history(player_id, headers):
     transfer_history_url = "https://tmapi-alpha.transfermarkt.technology/transfer/history/player/" + str(player_id)
 
@@ -52,5 +45,3 @@ def get_transfer_history(player_id, headers):
         values.append(value)
 
     return values
-
-print(get_transfer_history(player_id, headers))

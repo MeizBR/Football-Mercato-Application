@@ -8,6 +8,9 @@ import market_value_history
 import transfer_history
 import player_gallery
 import get_machine_headers
+import get_rumours
+
+from latest_transfers import premier_league
 
 # Headers
 headers = get_machine_headers.get_machine_headers()
@@ -187,5 +190,37 @@ def get_player(player_id: int):
                     "image_title": player_gallery.get_player_gallery(player_id, headers)[i]["image_title"],
                     "image_url": player_gallery.get_player_gallery(player_id, headers)[i]["image_url"],
                 } for i in range(len(player_gallery.get_player_gallery(player_id, headers)))
+        },
+    }
+
+@app.get("/rumours/page/{index}")
+def rumours(index: int):
+    return {
+        "rumours": {
+                f"rumour_{i+1}": {
+                    "player_name": get_rumours.get_rumours_function(headers, index)[i]["player_name"],
+                    "current_club": get_rumours.get_rumours_function(headers, index)[i]["current_club"],
+                    "market_value": get_rumours.get_rumours_function(headers, index)[i]["market_value"],
+                    "joining_destination": get_rumours.get_rumours_function(headers, index)[i]["joining_destination"],
+                    "departure_club": get_rumours.get_rumours_function(headers, index)[i]["departure_club"],
+                    "arrival_club": get_rumours.get_rumours_function(headers, index)[i]["arrival_club"]
+                } for i in range(len(get_rumours.get_rumours_function(headers, index)))
+        },
+    }
+
+@app.get("/latestTransfers")
+def latest_transfers():
+    return {
+        "latestTransfers": {
+                f"transfer_{i+1}": {
+                    "player_name": premier_league.premier_league_transfers[i]["player_name"],
+                    "player_position": premier_league.premier_league_transfers[i]["player_position"],
+                    "player_image_url": premier_league.premier_league_transfers[i]["player_image_url"],
+                    "country_name": premier_league.premier_league_transfers[i]["country_name"],
+                    "country_image_url": premier_league.premier_league_transfers[i]["country_image_url"],
+                    "transfer_fee": premier_league.premier_league_transfers[i]["transfer_fee"],
+                    "departure_club": premier_league.premier_league_transfers[i]["departure_club"],
+                    "joining_club": premier_league.premier_league_transfers[i]["joining_club"],
+                } for i in range(len(premier_league.premier_league_transfers))
         },
     }

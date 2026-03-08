@@ -1,7 +1,3 @@
-from bs4 import BeautifulSoup
-import re
-import requests
-import json
 from fastapi import FastAPI
 
 import market_value_history

@@ -41,7 +41,7 @@ for element in soup.select('td img.bilderrahmen-fixed'):
     player_details.append(
         {
             "player_name": element.get("alt", "").strip(),
-            "player_position": re.search("Position:.*?([A-z].*?)\n", ext_soup.text, re.DOTALL).group(1).strip(),
+            "player_position": re.search("Position:.*?([A-z].*?)\n", ext_soup.text, re.DOTALL).group(1).strip() if re.search("Position:.*?([A-z].*?)\n", ext_soup.text, re.DOTALL) else "Unknown",
             "player_image_url": element.get("data-src", "").strip(),
         }
     )
@@ -102,4 +102,4 @@ for i,j,k,l in zip(player_details, country_details, player_fees, tmp):
         }
     )
 
-print(liga_portugal_transfers)
+# print(liga_portugal_transfers)

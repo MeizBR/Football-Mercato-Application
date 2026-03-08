@@ -84,3 +84,5 @@ def get_rumours_function(headers, index):
 
         # print(rumours_list [:2])
     return rumours_list
+
+# print(get_rumours_function(headers, 1))

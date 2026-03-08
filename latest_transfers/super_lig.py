@@ -41,7 +41,7 @@ for element in soup.select('td img.bilderrahmen-fixed'):
     player_details.append(
         {
             "player_name": element.get("alt", "").strip(),
-            "player_position": re.search("Position:.*?([A-z].*?)\n", ext_soup.text, re.DOTALL).group(1).strip(),
+            "player_position": re.search("Position:.*?([A-z].*?)\n", ext_soup.text, re.DOTALL).group(1).strip() if re.search("Position:.*?([A-z].*?)\n", ext_soup.text, re.DOTALL) else "Unknown",
             "player_image_url": element.get("data-src", "").strip(),
         }
     )

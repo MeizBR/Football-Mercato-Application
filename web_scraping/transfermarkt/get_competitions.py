@@ -1,8 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import re
 import get_machine_headers
-import json
 
 def get_element_occurences(s, e):
     i = 0

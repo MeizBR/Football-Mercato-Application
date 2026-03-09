@@ -1,10 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import get_machine_headers
-import json
-
-# headers = get_machine_headers.get_machine_headers()
 
 player_names = []
 club_names = []

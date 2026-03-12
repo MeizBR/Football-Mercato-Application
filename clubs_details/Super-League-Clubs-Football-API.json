@@ -1,0 +1,223 @@
+[
+  {
+    "team": {
+      "id": 551,
+      "name": "FC Basel 1893",
+      "code": "BAS",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/551.png"
+    },
+    "stadium": {
+      "id": 1530,
+      "name": "St. Jakob-Park",
+      "address": "Sankt Jakob-Strasse 395",
+      "city": "Basel",
+      "capacity": 37994,
+      "image": "https://media.api-sports.io/football/venues/1530.png"
+    }
+  },
+  {
+    "team": {
+      "id": 565,
+      "name": "BSC Young Boys",
+      "code": "YOU",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/565.png"
+    },
+    "stadium": {
+      "id": 10500,
+      "name": "Stadion Wankdorf",
+      "address": "Papierm\u00fchlestrasse 71",
+      "city": "Bern",
+      "capacity": 31700,
+      "image": "https://media.api-sports.io/football/venues/10500.png"
+    }
+  },
+  {
+    "team": {
+      "id": 606,
+      "name": "FC Lugano",
+      "code": "LUG",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/606.png"
+    },
+    "stadium": {
+      "id": 1536,
+      "name": "Stadio di Cornaredo",
+      "address": "Via Trevano 100",
+      "city": "Lugano",
+      "capacity": 5476,
+      "image": "https://media.api-sports.io/football/venues/1536.png"
+    }
+  },
+  {
+    "team": {
+      "id": 630,
+      "name": "FC Sion",
+      "code": "SIO",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/630.png"
+    },
+    "stadium": {
+      "id": 1542,
+      "name": "Stade de Tourbillon",
+      "address": "38, rue des Echutes",
+      "city": "Sion",
+      "capacity": 14283,
+      "image": "https://media.api-sports.io/football/venues/1542.png"
+    }
+  },
+  {
+    "team": {
+      "id": 644,
+      "name": "FC Luzern",
+      "code": "LUZ",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/644.png"
+    },
+    "stadium": {
+      "id": 1537,
+      "name": "swissporarena",
+      "address": "Horwerstrasse 34",
+      "city": "Luzern",
+      "capacity": 16490,
+      "image": "https://media.api-sports.io/football/venues/1537.png"
+    }
+  },
+  {
+    "team": {
+      "id": 783,
+      "name": "FC Zurich",
+      "code": "ZUR",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/783.png"
+    },
+    "stadium": {
+      "id": 1533,
+      "name": "Stadion Letzigrund",
+      "address": "Badenerstrasse 500",
+      "city": "Z\u00fcrich",
+      "capacity": 26114,
+      "image": "https://media.api-sports.io/football/venues/1533.png"
+    }
+  },
+  {
+    "team": {
+      "id": 1011,
+      "name": "FC ST. Gallen",
+      "code": "GAL",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/1011.png"
+    },
+    "stadium": {
+      "id": 1543,
+      "name": "kybunpark",
+      "address": "Z\u00fcrcher Strasse 464",
+      "city": "St. Gallen",
+      "capacity": 20029,
+      "image": "https://media.api-sports.io/football/venues/1543.png"
+    }
+  },
+  {
+    "team": {
+      "id": 1013,
+      "name": "Grasshoppers",
+      "code": "GRA",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/1013.png"
+    },
+    "stadium": {
+      "id": 1533,
+      "name": "Stadion Letzigrund",
+      "address": "Badenerstrasse 500",
+      "city": "Z\u00fcrich",
+      "capacity": 26114,
+      "image": "https://media.api-sports.io/football/venues/1533.png"
+    }
+  },
+  {
+    "team": {
+      "id": 1014,
+      "name": "Lausanne",
+      "code": "LAU",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/1014.png"
+    },
+    "stadium": {
+      "id": 11917,
+      "name": "Stade de la Tuili\u00e8re",
+      "address": "Route de Romanel 10",
+      "city": "Lausanne",
+      "capacity": 13132,
+      "image": "https://media.api-sports.io/football/venues/11917.png"
+    }
+  },
+  {
+    "team": {
+      "id": 2177,
+      "name": "FC Aarau",
+      "code": "AAR",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/2177.png"
+    },
+    "stadium": {
+      "id": 1531,
+      "name": "Stadion Br\u00fcgglifeld",
+      "address": "Br\u00fcgglifeldweg",
+      "city": "Aarau",
+      "capacity": 8450,
+      "image": "https://media.api-sports.io/football/venues/1531.png"
+    }
+  },
+  {
+    "team": {
+      "id": 2180,
+      "name": "FC Winterthur",
+      "code": "WIN",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/2180.png"
+    },
+    "stadium": {
+      "id": 1547,
+      "name": "Stadion Sch\u00fctzenwiese",
+      "address": "Rennweg 5",
+      "city": "Winterthur",
+      "capacity": 8700,
+      "image": "https://media.api-sports.io/football/venues/1547.png"
+    }
+  },
+  {
+    "team": {
+      "id": 2184,
+      "name": "Servette FC",
+      "code": "SER",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/2184.png"
+    },
+    "stadium": {
+      "id": 1541,
+      "name": "Stade de Gen\u00e8ve",
+      "address": "16, route des Jeunes",
+      "city": "Lancy",
+      "capacity": 28229,
+      "image": "https://media.api-sports.io/football/venues/1541.png"
+    }
+  },
+  {
+    "team": {
+      "id": 6653,
+      "name": "Yverdon Sport",
+      "code": "YVE",
+      "country": "Switzerland",
+      "logo": "https://media.api-sports.io/football/teams/6653.png"
+    },
+    "stadium": {
+      "id": 4859,
+      "name": "Stade Municipal",
+      "address": "Rue des P\u00eacheurs",
+      "city": "Yverdon-les-Bains",
+      "capacity": 5100,
+      "image": "https://media.api-sports.io/football/venues/4859.png"
+    }
+  }
+]

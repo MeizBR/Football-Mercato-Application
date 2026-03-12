@@ -1,0 +1,325 @@
+[
+  {
+    "team": {
+      "id": 77,
+      "name": "Angers",
+      "code": "ANG",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/77.png"
+    },
+    "stadium": {
+      "id": 634,
+      "name": "Stade Raymond-Kopa",
+      "address": "73, boulevard Pierre de Coubertin",
+      "city": "Angers",
+      "capacity": 19000,
+      "image": "https://media.api-sports.io/football/venues/634.png"
+    }
+  },
+  {
+    "team": {
+      "id": 79,
+      "name": "Lille",
+      "code": "LIL",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/79.png"
+    },
+    "stadium": {
+      "id": 19207,
+      "name": "Decathlon Arena \u2013 Stade Pierre-Mauroy",
+      "address": "261, Boulevard de Tournai, l&apos;H\u00f4tel de Ville",
+      "city": "Villeneuve d&apos;Ascq",
+      "capacity": 50083,
+      "image": "https://media.api-sports.io/football/venues/19207.png"
+    }
+  },
+  {
+    "team": {
+      "id": 80,
+      "name": "Lyon",
+      "code": "LYO",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/80.png"
+    },
+    "stadium": {
+      "id": 666,
+      "name": "Groupama Stadium",
+      "address": "Chemin du Montout",
+      "city": "D\u00e9cines-Charpieu",
+      "capacity": 61556,
+      "image": "https://media.api-sports.io/football/venues/666.png"
+    }
+  },
+  {
+    "team": {
+      "id": 81,
+      "name": "Marseille",
+      "code": "MAR",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/81.png"
+    },
+    "stadium": {
+      "id": 12678,
+      "name": "Stade Orange V\u00e9lodrome",
+      "address": "3, boulevard Michelet",
+      "city": "Marseille",
+      "capacity": 67394,
+      "image": "https://media.api-sports.io/football/venues/12678.png"
+    }
+  },
+  {
+    "team": {
+      "id": 82,
+      "name": "Montpellier",
+      "code": "MON",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/82.png"
+    },
+    "stadium": {
+      "id": 20107,
+      "name": "Stade de la Mosson-Mondial 98",
+      "address": "Avenue de Heidelberg",
+      "city": "Montpellier",
+      "capacity": 32939,
+      "image": "https://media.api-sports.io/football/venues/20107.png"
+    }
+  },
+  {
+    "team": {
+      "id": 83,
+      "name": "Nantes",
+      "code": "NAN",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/83.png"
+    },
+    "stadium": {
+      "id": 662,
+      "name": "Stade de la Beaujoire - Louis Fonteneau",
+      "address": "5, boulevard de la Beaujoire",
+      "city": "Nantes",
+      "capacity": 38285,
+      "image": "https://media.api-sports.io/football/venues/662.png"
+    }
+  },
+  {
+    "team": {
+      "id": 84,
+      "name": "Nice",
+      "code": "NIC",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/84.png"
+    },
+    "stadium": {
+      "id": 663,
+      "name": "Allianz Riviera",
+      "address": "Boulevard des Jardiniers",
+      "city": "Nice",
+      "capacity": 35624,
+      "image": "https://media.api-sports.io/football/venues/663.png"
+    }
+  },
+  {
+    "team": {
+      "id": 85,
+      "name": "Paris Saint Germain",
+      "code": "PAR",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/85.png"
+    },
+    "stadium": {
+      "id": 671,
+      "name": "Parc des Princes",
+      "address": "24, rue du Commandant Guilbaud",
+      "city": "Paris",
+      "capacity": 47929,
+      "image": "https://media.api-sports.io/football/venues/671.png"
+    }
+  },
+  {
+    "team": {
+      "id": 91,
+      "name": "Monaco",
+      "code": "MON",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/91.png"
+    },
+    "stadium": {
+      "id": 20470,
+      "name": "Stade Louis-II",
+      "address": "7, avenue des Castelans",
+      "city": "Monaco",
+      "capacity": 18523,
+      "image": "https://media.api-sports.io/football/venues/20470.png"
+    }
+  },
+  {
+    "team": {
+      "id": 93,
+      "name": "Reims",
+      "code": "REI",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/93.png"
+    },
+    "stadium": {
+      "id": 22707,
+      "name": "Stade Auguste-Delaune",
+      "address": "33, Chauss\u00e9e Bocquaine",
+      "city": "Reims",
+      "capacity": 21684,
+      "image": "https://media.api-sports.io/football/venues/22707.png"
+    }
+  },
+  {
+    "team": {
+      "id": 94,
+      "name": "Rennes",
+      "code": "REN",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/94.png"
+    },
+    "stadium": {
+      "id": 680,
+      "name": "Roazhon Park",
+      "address": "111, route de Lorient",
+      "city": "Rennes",
+      "capacity": 31127,
+      "image": "https://media.api-sports.io/football/venues/680.png"
+    }
+  },
+  {
+    "team": {
+      "id": 95,
+      "name": "Strasbourg",
+      "code": "STR",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/95.png"
+    },
+    "stadium": {
+      "id": 681,
+      "name": "Stade de la Meinau",
+      "address": "12, rue de l&apos;Extenwoerth",
+      "city": "Strasbourg",
+      "capacity": 26109,
+      "image": "https://media.api-sports.io/football/venues/681.png"
+    }
+  },
+  {
+    "team": {
+      "id": 96,
+      "name": "Toulouse",
+      "code": "TOU",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/96.png"
+    },
+    "stadium": {
+      "id": 682,
+      "name": "Stadium de Toulouse",
+      "address": "1, all\u00e9e Gabriel Bi\u00e8n\u00e9s",
+      "city": "Toulouse",
+      "capacity": 33150,
+      "image": "https://media.api-sports.io/football/venues/682.png"
+    }
+  },
+  {
+    "team": {
+      "id": 106,
+      "name": "Stade Brestois 29",
+      "code": "BRE",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/106.png"
+    },
+    "stadium": {
+      "id": 641,
+      "name": "Stade Francis-Le Bl\u00e9",
+      "address": "26, rue de Quimper",
+      "city": "Brest",
+      "capacity": 15931,
+      "image": "https://media.api-sports.io/football/venues/641.png"
+    }
+  },
+  {
+    "team": {
+      "id": 108,
+      "name": "Auxerre",
+      "code": "AUX",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/108.png"
+    },
+    "stadium": {
+      "id": 636,
+      "name": "Stade de l'Abb\u00e9 Deschamps",
+      "address": "Route de Vaux",
+      "city": "Auxerre",
+      "capacity": 23467,
+      "image": "https://media.api-sports.io/football/venues/636.png"
+    }
+  },
+  {
+    "team": {
+      "id": 111,
+      "name": "Le Havre",
+      "code": "HAV",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/111.png"
+    },
+    "stadium": {
+      "id": 652,
+      "name": "Stade Oc\u00e9ane",
+      "address": "Boulevard de L\u00e9ningrad",
+      "city": "Le Havre",
+      "capacity": 25178,
+      "image": "https://media.api-sports.io/football/venues/652.png"
+    }
+  },
+  {
+    "team": {
+      "id": 112,
+      "name": "Metz",
+      "code": "MET",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/112.png"
+    },
+    "stadium": {
+      "id": 658,
+      "name": "Stade Saint-Symphorien",
+      "address": "3, all\u00e9e Saint-Symphorien",
+      "city": "Longeville-l\u00e8s-Metz",
+      "capacity": 30000,
+      "image": "https://media.api-sports.io/football/venues/658.png"
+    }
+  },
+  {
+    "team": {
+      "id": 116,
+      "name": "Lens",
+      "code": "LEN",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/116.png"
+    },
+    "stadium": {
+      "id": 654,
+      "name": "Stade Bollaert-Delelis",
+      "address": "83, rue Maurice-Carton",
+      "city": "Lens",
+      "capacity": 41233,
+      "image": "https://media.api-sports.io/football/venues/654.png"
+    }
+  },
+  {
+    "team": {
+      "id": 1063,
+      "name": "Saint Etienne",
+      "code": "ETI",
+      "country": "France",
+      "logo": "https://media.api-sports.io/football/teams/1063.png"
+    },
+    "stadium": {
+      "id": 676,
+      "name": "Stade Geoffroy-Guichard",
+      "address": "14, rue Pierre et Paul Guichard",
+      "city": "Saint-\u00c8tienne",
+      "capacity": 41965,
+      "image": "https://media.api-sports.io/football/venues/676.png"
+    }
+  }
+]

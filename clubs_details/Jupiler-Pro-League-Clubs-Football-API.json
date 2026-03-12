@@ -1,0 +1,291 @@
+[
+  {
+    "team": {
+      "id": 260,
+      "name": "OH Leuven",
+      "code": "LEU",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/260.png"
+    },
+    "stadium": {
+      "id": 186,
+      "name": "King Power at Den Dreef Stadion",
+      "address": "Kardinaal Mercierlaan 46",
+      "city": "Heverlee",
+      "capacity": 12500,
+      "image": "https://media.api-sports.io/football/venues/186.png"
+    }
+  },
+  {
+    "team": {
+      "id": 261,
+      "name": "KVC Westerlo",
+      "code": "WES",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/261.png"
+    },
+    "stadium": {
+      "id": 195,
+      "name": "Het Kuipje",
+      "address": "De Merodedreef 189",
+      "city": "Westerlo",
+      "capacity": 8035,
+      "image": "https://media.api-sports.io/football/venues/195.png"
+    }
+  },
+  {
+    "team": {
+      "id": 263,
+      "name": "Beerschot VA",
+      "code": null,
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/263.png"
+    },
+    "stadium": {
+      "id": 181,
+      "name": "Olympisch Stadion",
+      "address": "Atletenstraat 32",
+      "city": "Antwerp (Anvers)",
+      "capacity": 13405,
+      "image": "https://media.api-sports.io/football/venues/181.png"
+    }
+  },
+  {
+    "team": {
+      "id": 266,
+      "name": "KV Mechelen",
+      "code": "MEC",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/266.png"
+    },
+    "stadium": {
+      "id": 20336,
+      "name": "AFAS Stadion",
+      "address": "Kleine Nieuwedijk 53",
+      "city": "Malines",
+      "capacity": 16715,
+      "image": "https://media.api-sports.io/football/venues/20336.png"
+    }
+  },
+  {
+    "team": {
+      "id": 554,
+      "name": "Anderlecht",
+      "code": "AND",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/554.png"
+    },
+    "stadium": {
+      "id": 174,
+      "name": "Lotto Park",
+      "address": "Avenue Th\u00e9o Verbeeck 2",
+      "city": "Brussel",
+      "capacity": 28063,
+      "image": "https://media.api-sports.io/football/venues/174.png"
+    }
+  },
+  {
+    "team": {
+      "id": 569,
+      "name": "Club Brugge KV",
+      "code": "CLU",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/569.png"
+    },
+    "stadium": {
+      "id": 176,
+      "name": "Jan Breydelstadion",
+      "address": "Olympialaan 74",
+      "city": "Brugge",
+      "capacity": 29062,
+      "image": "https://media.api-sports.io/football/venues/176.png"
+    }
+  },
+  {
+    "team": {
+      "id": 631,
+      "name": "Gent",
+      "code": "GEN",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/631.png"
+    },
+    "stadium": {
+      "id": 20727,
+      "name": "Planet Group Arena",
+      "address": "Ottergemsesteenweg-Zuid 808",
+      "city": "Gent",
+      "capacity": 20185,
+      "image": "https://media.api-sports.io/football/venues/20727.png"
+    }
+  },
+  {
+    "team": {
+      "id": 733,
+      "name": "Standard Liege",
+      "code": "STA",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/733.png"
+    },
+    "stadium": {
+      "id": 192,
+      "name": "Stade Maurice Dufrasne",
+      "address": "Rue de la Centrale 2, Sclessin",
+      "city": "Luik",
+      "capacity": 27670,
+      "image": "https://media.api-sports.io/football/venues/192.png"
+    }
+  },
+  {
+    "team": {
+      "id": 734,
+      "name": "Kortrijk",
+      "code": "KOR",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/734.png"
+    },
+    "stadium": {
+      "id": 182,
+      "name": "Guldensporenstadion",
+      "address": "Meensesteenweg 84a / Moorseelsestraat 111b, Heule",
+      "city": "Kortrijk",
+      "capacity": 9399,
+      "image": "https://media.api-sports.io/football/venues/182.png"
+    }
+  },
+  {
+    "team": {
+      "id": 735,
+      "name": "St. Truiden",
+      "code": "TRU",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/735.png"
+    },
+    "stadium": {
+      "id": 19611,
+      "name": "Daio Wasabi Stayen Stadium",
+      "address": "Tiensesteenweg 168",
+      "city": "St.-Trond",
+      "capacity": 14600,
+      "image": "https://media.api-sports.io/football/venues/19611.png"
+    }
+  },
+  {
+    "team": {
+      "id": 736,
+      "name": "Charleroi",
+      "code": "CHA",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/736.png"
+    },
+    "stadium": {
+      "id": 177,
+      "name": "Stade du Pays de Charleroi",
+      "address": "Boulevard Zo\u00e9 Drion 19",
+      "city": "Charleroi",
+      "capacity": 18000,
+      "image": "https://media.api-sports.io/football/venues/177.png"
+    }
+  },
+  {
+    "team": {
+      "id": 740,
+      "name": "Antwerp",
+      "code": "ANT",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/740.png"
+    },
+    "stadium": {
+      "id": 175,
+      "name": "Bosuilstadion",
+      "address": "Oude Bosuilbaan 54a",
+      "city": "Deurne",
+      "capacity": 23057,
+      "image": "https://media.api-sports.io/football/venues/175.png"
+    }
+  },
+  {
+    "team": {
+      "id": 741,
+      "name": "Cercle Brugge",
+      "code": "CER",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/741.png"
+    },
+    "stadium": {
+      "id": 176,
+      "name": "Jan Breydelstadion",
+      "address": "Olympialaan 74",
+      "city": "Brugge",
+      "capacity": 29062,
+      "image": "https://media.api-sports.io/football/venues/176.png"
+    }
+  },
+  {
+    "team": {
+      "id": 742,
+      "name": "Genk",
+      "code": "GEN",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/742.png"
+    },
+    "stadium": {
+      "id": 12455,
+      "name": "Cegeka Arena",
+      "address": "Stadionplein 4, Waterschei",
+      "city": "Genk",
+      "capacity": 24956,
+      "image": "https://media.api-sports.io/football/venues/12455.png"
+    }
+  },
+  {
+    "team": {
+      "id": 1393,
+      "name": "Union St. Gilloise",
+      "code": "GIL",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/1393.png"
+    },
+    "stadium": {
+      "id": 194,
+      "name": "Stade Joseph Mari\u00ebn",
+      "address": "Chauss\u00e9e de Bruxelles 223, Forest",
+      "city": "Brussels",
+      "capacity": 9400,
+      "image": "https://media.api-sports.io/football/venues/194.png"
+    }
+  },
+  {
+    "team": {
+      "id": 6215,
+      "name": "Dender",
+      "code": "DEN",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/6215.png"
+    },
+    "stadium": {
+      "id": 19052,
+      "name": "DENDER Football Complex",
+      "address": "Stadionlaan 5",
+      "city": "Denderleeuw",
+      "capacity": 6429,
+      "image": "https://media.api-sports.io/football/venues/19052.png"
+    }
+  },
+  {
+    "team": {
+      "id": 6222,
+      "name": "Patro Eisden",
+      "code": "PAT",
+      "country": "Belgium",
+      "logo": "https://media.api-sports.io/football/teams/6222.png"
+    },
+    "stadium": {
+      "id": 20343,
+      "name": "Patrostadion",
+      "address": "Kolenmijn Limburg-Maasland 2",
+      "city": "Maasmechelen",
+      "capacity": 6490,
+      "image": "https://media.api-sports.io/football/venues/20343.png"
+    }
+  }
+]

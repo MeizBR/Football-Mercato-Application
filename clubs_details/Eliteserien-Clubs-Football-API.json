@@ -1,0 +1,291 @@
+[
+  {
+    "team": {
+      "id": 319,
+      "name": "Brann",
+      "code": "BRA",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/319.png"
+    },
+    "stadium": {
+      "id": 1176,
+      "name": "Brann Stadion",
+      "address": "Kniksens plass 1",
+      "city": "Bergen",
+      "capacity": 17686,
+      "image": "https://media.api-sports.io/football/venues/1176.png"
+    }
+  },
+  {
+    "team": {
+      "id": 320,
+      "name": "Kristiansund BK",
+      "code": "KRI",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/320.png"
+    },
+    "stadium": {
+      "id": 19680,
+      "name": "Nordm\u00f8re stadion",
+      "address": "Magnar Isaksens vei 1",
+      "city": "Kristiansund",
+      "capacity": 4444,
+      "image": "https://media.api-sports.io/football/venues/19680.png"
+    }
+  },
+  {
+    "team": {
+      "id": 321,
+      "name": "Lillestrom",
+      "code": "LIL",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/321.png"
+    },
+    "stadium": {
+      "id": 1182,
+      "name": "\u00c5r\u00e5sen Stadion",
+      "address": "C.J. Hansensvej 3b",
+      "city": "Kjeller",
+      "capacity": 11637,
+      "image": "https://media.api-sports.io/football/venues/1182.png"
+    }
+  },
+  {
+    "team": {
+      "id": 324,
+      "name": "Stromsgodset",
+      "code": "STR",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/324.png"
+    },
+    "stadium": {
+      "id": 1199,
+      "name": "Marienlyst Stadion",
+      "address": "Schwartzgata 2",
+      "city": "Drammen",
+      "capacity": 8935,
+      "image": "https://media.api-sports.io/football/venues/1199.png"
+    }
+  },
+  {
+    "team": {
+      "id": 325,
+      "name": "Tromso",
+      "code": "TRO",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/325.png"
+    },
+    "stadium": {
+      "id": 19681,
+      "name": "Romssa Arena",
+      "address": "Stadionveien 3",
+      "city": "Troms\u00f8",
+      "capacity": 8585,
+      "image": "https://media.api-sports.io/football/venues/19681.png"
+    }
+  },
+  {
+    "team": {
+      "id": 327,
+      "name": "Bodo/Glimt",
+      "code": "BOD",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/327.png"
+    },
+    "stadium": {
+      "id": 1175,
+      "name": "Aspmyra Stadion",
+      "address": "H\u00e5loglandsgata 30",
+      "city": "Bod\u00f8",
+      "capacity": 8270,
+      "image": "https://media.api-sports.io/football/venues/1175.png"
+    }
+  },
+  {
+    "team": {
+      "id": 328,
+      "name": "Haugesund",
+      "code": "HAU",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/328.png"
+    },
+    "stadium": {
+      "id": 12130,
+      "name": "Haugesund Sparebank Arena",
+      "address": "Karmsundggaten 169",
+      "city": "Haugesund",
+      "capacity": 8950,
+      "image": "https://media.api-sports.io/football/venues/12130.png"
+    }
+  },
+  {
+    "team": {
+      "id": 329,
+      "name": "Molde",
+      "code": "MOL",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/329.png"
+    },
+    "stadium": {
+      "id": 1184,
+      "name": "Aker Stadion",
+      "address": "Julsundveien 14, Reknes",
+      "city": "Molde",
+      "capacity": 11800,
+      "image": "https://media.api-sports.io/football/venues/1184.png"
+    }
+  },
+  {
+    "team": {
+      "id": 330,
+      "name": "ODD Ballklubb",
+      "code": "ODD",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/330.png"
+    },
+    "stadium": {
+      "id": 1187,
+      "name": "Skagerak Arena",
+      "address": "Fridtjof Nansensgatan 21-23, Falkum",
+      "city": "Skien",
+      "capacity": 13500,
+      "image": "https://media.api-sports.io/football/venues/1187.png"
+    }
+  },
+  {
+    "team": {
+      "id": 331,
+      "name": "Rosenborg",
+      "code": "ROS",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/331.png"
+    },
+    "stadium": {
+      "id": 1190,
+      "name": "Lerkendal Stadion",
+      "address": "Kl\u00e6buveien 125",
+      "city": "Trondheim",
+      "capacity": 21850,
+      "image": "https://media.api-sports.io/football/venues/1190.png"
+    }
+  },
+  {
+    "team": {
+      "id": 332,
+      "name": "Sandefjord",
+      "code": "SAN",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/332.png"
+    },
+    "stadium": {
+      "id": 20418,
+      "name": "Jotun Arena",
+      "address": "Nyg\u00e5rdsveien 84",
+      "city": "Sandefjord",
+      "capacity": 6598,
+      "image": "https://media.api-sports.io/football/venues/20418.png"
+    }
+  },
+  {
+    "team": {
+      "id": 333,
+      "name": "Sarpsborg 08 FF",
+      "code": "SAR",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/333.png"
+    },
+    "stadium": {
+      "id": 1193,
+      "name": "Sarpsborg Stadion",
+      "address": "Haftor Jonssons gate 19",
+      "city": "Sarpsborg",
+      "capacity": 8022,
+      "image": "https://media.api-sports.io/football/venues/1193.png"
+    }
+  },
+  {
+    "team": {
+      "id": 759,
+      "name": "Viking",
+      "code": "VIK",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/759.png"
+    },
+    "stadium": {
+      "id": 21732,
+      "name": "Lyse Arena",
+      "address": "Gamle J\u00e5tt\u00e5v\u00e5gen 3, J\u00e5tt\u00e5v\u00e5gen",
+      "city": "Stavanger",
+      "capacity": 16508,
+      "image": "https://media.api-sports.io/football/venues/21732.png"
+    }
+  },
+  {
+    "team": {
+      "id": 2143,
+      "name": "KFUM Oslo",
+      "code": "KFU",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/2143.png"
+    },
+    "stadium": {
+      "id": 1179,
+      "name": "KFUM Arena",
+      "address": "Ekebergveien 101",
+      "city": "Oslo",
+      "capacity": 3300,
+      "image": "https://media.api-sports.io/football/venues/1179.png"
+    }
+  },
+  {
+    "team": {
+      "id": 2149,
+      "name": "Fredrikstad",
+      "code": "FRE",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/2149.png"
+    },
+    "stadium": {
+      "id": 2792,
+      "name": "Nye Fredrikstad Stadion",
+      "address": "K. G. Meldahls vei 9, Kr\u00e5ker\u00f8y",
+      "city": "Fredrikstad",
+      "capacity": 12565,
+      "image": "https://media.api-sports.io/football/venues/2792.png"
+    }
+  },
+  {
+    "team": {
+      "id": 2159,
+      "name": "Ham-Kam",
+      "code": "HAM",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/2159.png"
+    },
+    "stadium": {
+      "id": 1177,
+      "name": "Briskeby Arena",
+      "address": "Arenavegen 2, Briskebyen",
+      "city": "Hamar",
+      "capacity": 8068,
+      "image": "https://media.api-sports.io/football/venues/1177.png"
+    }
+  },
+  {
+    "team": {
+      "id": 7012,
+      "name": "Moss",
+      "code": "MOS",
+      "country": "Norway",
+      "logo": "https://media.api-sports.io/football/teams/7012.png"
+    },
+    "stadium": {
+      "id": 5124,
+      "name": "Mell\u00f8s Stadion",
+      "address": "Kallumvegen 6A, Mell\u00f8s",
+      "city": "Moss",
+      "capacity": 9410,
+      "image": "https://media.api-sports.io/football/venues/5124.png"
+    }
+  }
+]

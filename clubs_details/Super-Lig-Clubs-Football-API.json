@@ -1,0 +1,325 @@
+[
+  {
+    "team": {
+      "id": 549,
+      "name": "Be\u015fikta\u015f",
+      "code": "BES",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/549.png"
+    },
+    "stadium": {
+      "id": 20423,
+      "name": "T\u00fcpra\u015f Stadyumu",
+      "address": "Dolmabah\u00e7e Gazhane Caddesi, Be\u015fikta\u015f",
+      "city": "\u0130stanbul",
+      "capacity": 43500,
+      "image": "https://media.api-sports.io/football/venues/20423.png"
+    }
+  },
+  {
+    "team": {
+      "id": 564,
+      "name": "Ba\u015fak\u015fehir",
+      "code": "IST",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/564.png"
+    },
+    "stadium": {
+      "id": 1584,
+      "name": "Ba\u015fak\u015fehir Fatih Terim Stadyumu",
+      "address": "Yunus Emre Caddesi, Ba\u015fak\u015fehir",
+      "city": "\u0130stanbul",
+      "capacity": 17319,
+      "image": "https://media.api-sports.io/football/venues/1584.png"
+    }
+  },
+  {
+    "team": {
+      "id": 607,
+      "name": "Konyaspor",
+      "code": "KON",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/607.png"
+    },
+    "stadium": {
+      "id": 22762,
+      "name": "Meda\u015f Konya B\u00fcy\u00fck\u015fehir Stadyumu",
+      "address": "Sille Parsana Mh., Kaleta\u015f Caddesi, Sel\u00e7uklu",
+      "city": "Konya",
+      "capacity": 42276,
+      "image": "https://media.api-sports.io/football/venues/22762.png"
+    }
+  },
+  {
+    "team": {
+      "id": 611,
+      "name": "Fenerbah\u00e7e",
+      "code": "FEN",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/611.png"
+    },
+    "stadium": {
+      "id": 22760,
+      "name": "Chobani Stadyumu Fenerbah\u00e7e \u015e\u00fckr\u00fc Saraco\u011flu Spor Kompleksi",
+      "address": "Recep Peker Caddesi, Kad\u0131k\u00f6y",
+      "city": "\u0130stanbul",
+      "capacity": 47834,
+      "image": "https://media.api-sports.io/football/venues/22760.png"
+    }
+  },
+  {
+    "team": {
+      "id": 645,
+      "name": "Galatasaray",
+      "code": "GAL",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/645.png"
+    },
+    "stadium": {
+      "id": 22761,
+      "name": "RAMS Park",
+      "address": "\u0130stanbul \u00c7evre Yolu, Aslantepe",
+      "city": "\u0130stanbul",
+      "capacity": 53798,
+      "image": "https://media.api-sports.io/football/venues/22761.png"
+    }
+  },
+  {
+    "team": {
+      "id": 994,
+      "name": "G\u00f6ztepe",
+      "code": "GOZ",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/994.png"
+    },
+    "stadium": {
+      "id": 22441,
+      "name": "G\u00fcrsel Aksel Stadyumu",
+      "address": "Mehmet Ali Akman, 20/3. Sk. No:28, Konak",
+      "city": "\u0130zmir",
+      "capacity": 30035,
+      "image": "https://media.api-sports.io/football/venues/22441.png"
+    }
+  },
+  {
+    "team": {
+      "id": 996,
+      "name": "Alanyaspor",
+      "code": "ALA",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/996.png"
+    },
+    "stadium": {
+      "id": 22465,
+      "name": "GAIN Park Stadium",
+      "address": "Sar\u0131kad\u0131o\u011flu Caddesi, Oba, Obak\u00f6y, Alanya",
+      "city": "Antalya",
+      "capacity": 15000,
+      "image": "https://media.api-sports.io/football/venues/22465.png"
+    }
+  },
+  {
+    "team": {
+      "id": 998,
+      "name": "Trabzonspor",
+      "code": "TRA",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/998.png"
+    },
+    "stadium": {
+      "id": 20189,
+      "name": "Papara Park",
+      "address": "Trabzon Giresun Yolu, Akyaz",
+      "city": "Trabzon",
+      "capacity": 41513,
+      "image": "https://media.api-sports.io/football/venues/20189.png"
+    }
+  },
+  {
+    "team": {
+      "id": 1001,
+      "name": "Kayserispor",
+      "code": "KAY",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/1001.png"
+    },
+    "stadium": {
+      "id": 19613,
+      "name": "RHG Enert\u00fcrk Enerji Stadyumu",
+      "address": "\u0130le F\u0131rat Caddesi",
+      "city": "Kayseri",
+      "capacity": 32864,
+      "image": "https://media.api-sports.io/football/venues/19613.png"
+    }
+  },
+  {
+    "team": {
+      "id": 1002,
+      "name": "Sivasspor",
+      "code": "SIV",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/1002.png"
+    },
+    "stadium": {
+      "id": 20425,
+      "name": "BG Group 4 Eyl\u00fcl Stadyumu",
+      "address": "Muhsin Yaz\u0131c\u0131o\u011flu Bulvar\u0131",
+      "city": "Sivas",
+      "capacity": 27532,
+      "image": "https://media.api-sports.io/football/venues/20425.png"
+    }
+  },
+  {
+    "team": {
+      "id": 1004,
+      "name": "Kas\u0131mpa\u015fa",
+      "code": "KAS",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/1004.png"
+    },
+    "stadium": {
+      "id": 22763,
+      "name": "Recep Tayyip Erdo\u011fan Stadyumu",
+      "address": "Tepeba\u015f\u0131 Caddesi, Kas\u0131mpa\u015fa, Beyo\u011flu",
+      "city": "\u0130stanbul",
+      "capacity": 14234,
+      "image": "https://media.api-sports.io/football/venues/22763.png"
+    }
+  },
+  {
+    "team": {
+      "id": 1005,
+      "name": "Antalyaspor",
+      "code": "ANT",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/1005.png"
+    },
+    "stadium": {
+      "id": 19220,
+      "name": "Corendon Airlines Park",
+      "address": "100. Y\u0131l Bulvar\u0131",
+      "city": "Antalya",
+      "capacity": 33032,
+      "image": "https://media.api-sports.io/football/venues/19220.png"
+    }
+  },
+  {
+    "team": {
+      "id": 1007,
+      "name": "Rizespor",
+      "code": "RIZ",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/1007.png"
+    },
+    "stadium": {
+      "id": 1580,
+      "name": "\u00c7aykur Didi Stadyumu",
+      "address": "Karadeniz Sahli Yolu Yanyolu",
+      "city": "Rize",
+      "capacity": 15558,
+      "image": "https://media.api-sports.io/football/venues/1580.png"
+    }
+  },
+  {
+    "team": {
+      "id": 3563,
+      "name": "Adana Demirspor",
+      "code": "ADA",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/3563.png"
+    },
+    "stadium": {
+      "id": 11924,
+      "name": "Yeni Adana Stadyumu",
+      "address": "\u00c7ark\u0131pare, Sar\u0131\u00e7am",
+      "city": "Adana",
+      "capacity": 33543,
+      "image": "https://media.api-sports.io/football/venues/11924.png"
+    }
+  },
+  {
+    "team": {
+      "id": 3573,
+      "name": "Gaziantep FK",
+      "code": "GAZ",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/3573.png"
+    },
+    "stadium": {
+      "id": 2375,
+      "name": "Gaziantep Stadyumu",
+      "address": "Yukar\u0131beylerbeyi Mah. 15 Nolu Sok., \u015eehitkamil",
+      "city": "Gaziantep",
+      "capacity": 35558,
+      "image": "https://media.api-sports.io/football/venues/2375.png"
+    }
+  },
+  {
+    "team": {
+      "id": 3575,
+      "name": "Hatayspor",
+      "code": "HAT",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/3575.png"
+    },
+    "stadium": {
+      "id": 8392,
+      "name": "Mersin Stadyumu",
+      "address": "Haraparas\u0131, S\u00fcreyya Halefo\u011flu Cd. No:64",
+      "city": "Mersin",
+      "capacity": 25534,
+      "image": "https://media.api-sports.io/football/venues/8392.png"
+    }
+  },
+  {
+    "team": {
+      "id": 3583,
+      "name": "Bodrum FK",
+      "code": null,
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/3583.png"
+    },
+    "stadium": {
+      "id": 2385,
+      "name": "Bodrum \u0130l\u00e7e Stad\u0131",
+      "address": "Marsmabedi Caddesi",
+      "city": "Bodrum",
+      "capacity": 3000,
+      "image": "https://media.api-sports.io/football/venues/2385.png"
+    }
+  },
+  {
+    "team": {
+      "id": 3588,
+      "name": "Ey\u00fcpspor",
+      "code": "EYU",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/3588.png"
+    },
+    "stadium": {
+      "id": 22763,
+      "name": "Recep Tayyip Erdo\u011fan Stadyumu",
+      "address": "Tepeba\u015f\u0131 Caddesi, Kas\u0131mpa\u015fa, Beyo\u011flu",
+      "city": "\u0130stanbul",
+      "capacity": 14234,
+      "image": "https://media.api-sports.io/football/venues/22763.png"
+    }
+  },
+  {
+    "team": {
+      "id": 3603,
+      "name": "Samsunspor",
+      "code": "SAM",
+      "country": "Turkey",
+      "logo": "https://media.api-sports.io/football/teams/3603.png"
+    },
+    "stadium": {
+      "id": 11925,
+      "name": "Samsun Yeni 19 May\u0131s Stadyumu",
+      "address": "Sanayi Mahallesi, Tekkek\u00f6y",
+      "city": "Samsun",
+      "capacity": 34658,
+      "image": "https://media.api-sports.io/football/venues/11925.png"
+    }
+  }
+]

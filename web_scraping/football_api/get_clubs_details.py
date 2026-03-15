@@ -4,11 +4,11 @@ import json
 conn = http.client.HTTPSConnection("v3.football.api-sports.io")
 
 headers = {
-    "x-apisports-key": ""
+    "x-apisports-key": "6e0302c89decf6ca9128074a8e024f98"
 }
 
 params = {
-    "league": "119",
+    "league": "39",
     "season": "2024"
 }
 
@@ -42,7 +42,7 @@ for team in data_json["response"]:
 
     teams.append(t)
 
-with open("Super-Liga-Clubs-Football-API.json", "w", encoding="utf-8") as f:
+with open("Premier-League-Clubs-Football-API.json", "w", encoding="utf-8") as f:
     json.dump(teams, f, indent=2)
 
 print(teams)

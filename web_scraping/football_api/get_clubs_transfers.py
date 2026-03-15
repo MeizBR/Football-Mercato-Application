@@ -14,7 +14,7 @@ headers = {
     'x-apisports-key': ""
 }
 
-leagues = ["Premier-League", "Serie-A", "La-Liga", "Bundesliga", "Ligue-1"]
+leagues = ["Bundesliga"]
 
 transfers = dict()
 
@@ -37,21 +37,22 @@ for league in leagues:
 
             transfers[club['team']['name']] = club_transfers_details
 
+# print(transfers)
+
+filtered_transfers = []
+
 for club in transfers:
-    filtered_transfers = []
-
     for transfer in transfers[club]:
-        keep_transfer = True
-
         for t in transfer["transfers"]:
             if int(t["date"][:4]) < previous_year:
-                keep_transfer = False
-                break
+                continue
+            else:
+                filtered_transfers.append({
+                    "player": transfer["player"],
+                    "transfers": t
+                })
 
-        if keep_transfer:
-            filtered_transfers.append(transfer)
-
-    transfers[club] = filtered_transfers
+# print(filtered_transfers)
 
 with open("results.json", "w", encoding="utf-8") as f:
     json.dump(filtered_transfers, f, indent=2)

@@ -10,6 +10,8 @@ import player_details
 
 from latest_transfers import premier_league, la_liga, serie_a, bundesliga, ligue_1, liga_portugal, eredivisie, jupiler_pro_league, super_lig, eliteserien, allsvenskan, super_league, super_liga
 
+from tuttomercato import main
+
 # Headers
 headers = get_machine_headers.get_machine_headers()
 
@@ -409,6 +411,21 @@ def latest_transfers():
                 "transfer_fee": transfer["transfer_fee"],
                 "departure_club": transfer["departure_club"],
                 "joining_club": transfer["joining_club"],
+            }
+            for i, transfer in enumerate(transfers)
+        }
+    }
+
+# Tuttomercato latest Transfers
+@app.get("/tuttomercato/latestNews")
+def latest_transfers():
+    transfers = main.get_transfers_tuttomercato(headers)
+
+    return {
+        "latestTransfers": {
+            f"transfer_{i+1}": {
+                "date": transfer["date"],
+                "detail": transfer["detail"]
             }
             for i, transfer in enumerate(transfers)
         }

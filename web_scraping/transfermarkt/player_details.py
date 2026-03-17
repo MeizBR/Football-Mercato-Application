@@ -2,6 +2,21 @@ from bs4 import BeautifulSoup
 import re
 import requests
 import json
+import pymongo
+import os
+
+host = os.environ.get("MONGODB_HOST")
+database = os.environ.get("MONGODB_DATABASE")
+user = os.environ.get("MONGODB_USER")
+password = os.environ.get("MONGODB_PASSWORD")
+
+myclient = pymongo.MongoClient(f"mongodb+srv://{user}:{password}@{host}")
+
+mydb = myclient["football-mercato"]
+
+mycol = mydb["transfermarkt-market-value-history-news"]
+
+logs = []
 
 def get_player_details(player_id, player_name, headers):
     url = "https://www.transfermarkt.com/" + player_name + "/profil/spieler/" + str(player_id)

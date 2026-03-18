@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import pymongo
 import os
+import time
 
 host = os.environ.get("MONGODB_HOST")
 database = os.environ.get("MONGODB_DATABASE")
@@ -27,6 +28,9 @@ def get_transfers_tuttomercato(headers):
     dates = []
 
     logs = []
+
+    mycol.delete_many({})
+    time.sleep(2)
 
     for content in soup.select("div.list ul li a"):
         for c in content.contents:

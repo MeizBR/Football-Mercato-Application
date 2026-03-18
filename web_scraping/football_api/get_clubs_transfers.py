@@ -14,7 +14,7 @@ headers = {
     'x-apisports-key': ""
 }
 
-leagues = ["Bundesliga"]
+leagues = ["Super-Lig"]
 
 transfers = dict()
 

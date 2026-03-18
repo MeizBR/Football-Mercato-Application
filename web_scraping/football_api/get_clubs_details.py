@@ -4,7 +4,7 @@ import json
 conn = http.client.HTTPSConnection("v3.football.api-sports.io")
 
 headers = {
-    "x-apisports-key": "6e0302c89decf6ca9128074a8e024f98"
+    "x-apisports-key": ""
 }
 
 params = {

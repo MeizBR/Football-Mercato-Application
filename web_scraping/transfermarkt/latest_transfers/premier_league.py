@@ -1,6 +1,20 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+import pymongo
+import os
+import time
+
+host = os.environ.get("MONGODB_HOST")
+database = os.environ.get("MONGODB_DATABASE")
+user = os.environ.get("MONGODB_USER")
+password = os.environ.get("MONGODB_PASSWORD")
+
+myclient = pymongo.MongoClient(f"mongodb+srv://{user}:{password}@{host}")
+
+mydb = myclient["football-mercato"]
+
+mycol = mydb["premier-league-latest-transfers"]
 
 def get_player_id(s):
     for i in range(55, len(s)):
@@ -19,6 +33,8 @@ def get_premier_league_transfers(headers):
     soup = BeautifulSoup(latest_transfers_url_response.text, "html.parser")
 
     player_details = []
+    logs = []
+
     for element in soup.select('td img.bilderrahmen-fixed'):
 
         ext_id = get_player_id(element.get("data-src", "").strip())
@@ -79,10 +95,12 @@ def get_premier_league_transfers(headers):
 
     # print(tmp)
 
+    mycol.delete_many({})
+    time.sleep(2)
+
     premier_league_transfers = []
     for i,j,k,l in zip(player_details, country_details, player_fees, tmp):
-        premier_league_transfers.append(
-            {
+        d = {
                 "player_name": i["player_name"],
                 "player_position": i["player_position"],
                 "player_image_url": i["player_image_url"],
@@ -92,6 +110,24 @@ def get_premier_league_transfers(headers):
                 "departure_club": l["from"],
                 "joining_club": l["to"]
             }
-        )
+        premier_league_transfers.append(d)
 
-    return premier_league_transfers
+        x = mycol.insert_one(d)
+        logs.append(x.inserted_id)
+
+    return premier_league_transfers, logs
+
+if __name__ == "__main__":
+    headers = {
+        "User-Agent": "Mozilla/5.0"
+    }
+
+    transfer_data, logs = get_premier_league_transfers(headers)
+
+    print("Transfer news table:\n")
+    for item in transfer_data:
+        print(item)
+
+    print("\nLogs:\n")
+    for log in logs:
+        print(log)

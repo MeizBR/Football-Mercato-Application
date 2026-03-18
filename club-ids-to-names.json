@@ -1,0 +1,22 @@
+[
+{"club_id": 281, "club_name_url": "manchester-city", "club_name": "Manchester City"},
+{"club_id": 11, "club_name_url": "fc-arsenal", "club_name": "Arsenal FC"},
+{"club_id": 631, "club_name_url": "fc-chelsea", "club_name": "Chelsea FC"},
+{"club_id": 31, "club_name_url": "fc-liverpool", "club_name": "Liverpool FC"},
+{"club_id": 148, "club_name_url": "tottenham-hotspur", "club_name": "Tottenham Hotspur"},
+{"club_id": 985, "club_name_url": "manchester-united", "club_name": "Manchester United"},
+{"club_id": 762, "club_name_url": "newcastle-united", "club_name": "Newcastle United"},
+{"club_id": 703, "club_name_url": "nottingham-forest", "club_name": "Nottingham Forest"},
+{"club_id": 405, "club_name_url": "aston-villa", "club_name": "Aston Villa"},
+{"club_id": 873, "club_name_url": "crystal-palace", "club_name": "Crystal Palace"},
+{"club_id": 989, "club_name_url": "afc-bournemouth", "club_name": "AFC Bournemouth"},
+{"club_id": 1237, "club_name_url": "brighton-amp-hove-albion", "club_name": "Brighton & Hove Albion"},
+{"club_id": 1148, "club_name_url": "fc-brentford", "club_name": "Brentford FC"},
+{"club_id": 29, "club_name_url": "fc-everton", "club_name": "Everton FC"},
+{"club_id": 931, "club_name_url": "fc-fulham", "club_name": "Fulham FC"},
+{"club_id": 289, "club_name_url": "afc-sunderland", "club_name": "Sunderland AFC"},
+{"club_id": 379, "club_name_url": "west-ham-united", "club_name": "West Ham United"},
+{"club_id": 399, "club_name_url": "leeds-united", "club_name": "Leeds United"},
+{"club_id": 543, "club_name_url": "wolverhampton-wanderers", "club_name": "Wolverhampton Wanderers"},
+{"club_id": 1132, "club_name_url": "fc-burnley", "club_name": "Burnley FC"}
+]

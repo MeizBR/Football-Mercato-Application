@@ -20,6 +20,8 @@ for competition in get_competitions.get_competitions():
 
     for link in soup.select("td.hauptlink a"):
         href = link.get("href", "")
+
+        club_name_url = href[1:href.find("/startseite")]
         
         match = re.search(r"/verein/(\d+)", href)
         if match:
@@ -28,17 +30,22 @@ for competition in get_competitions.get_competitions():
 
             club_object = {
                 "club_id": club_id,
+                "club_name_url": club_name_url,
                 "club_name": club_name
             }
+            print(club_object)
 
             clubs.append(club_object)
 
-            if club_id not in unique_set:
-                with open("club-ids-to-names.json", "a") as f:
-                    f.write(json.dumps(club_object) + ",\n")
-                unique_set.add(club_id)
-            else:
-                continue
+            with open("club-ids-to-names.json", "a") as f:
+                f.write(json.dumps(club_object) + ",\n")
+
+            # if club_id not in unique_set:
+            #     with open("club-ids-to-names.json", "a") as f:
+            #         f.write(json.dumps(club_object) + ",\n")
+            #     unique_set.add(club_id)
+            # else:
+            #     continue
         else:
             continue
 

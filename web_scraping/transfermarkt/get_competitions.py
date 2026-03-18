@@ -28,6 +28,26 @@ competitions_links = set()
 competitions = []
 links_list = []
 
+# x = [
+#     "https://www.transfermarkt.com/premier-league/startseite/wettbewerb/GB1",
+#     "https://www.transfermarkt.com/laliga/startseite/wettbewerb/ES1",
+#     "https://www.transfermarkt.com/serie-a/startseite/wettbewerb/IT1",
+#     "https://www.transfermarkt.com/bundesliga/startseite/wettbewerb/L1",
+#     "https://www.transfermarkt.com/ligue-1/startseite/wettbewerb/FR1",
+#     "https://www.transfermarkt.com/liga-nos/startseite/wettbewerb/PO1",
+#     "https://www.transfermarkt.com/eredivisie/startseite/wettbewerb/NL1",
+#     "https://www.transfermarkt.com/jupiler-pro-league/startseite/wettbewerb/BE1",
+#     "https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1",
+#     "https://www.transfermarkt.com/eliteserien/startseite/wettbewerb/NO1",
+#     "https://www.transfermarkt.com/allsvenskan/startseite/wettbewerb/SE1",
+#     "https://www.transfermarkt.com/super-league/startseite/wettbewerb/C1",
+#     "https://www.transfermarkt.com/superligaen/startseite/wettbewerb/DK1"
+# ]
+
+x = [
+    "https://www.transfermarkt.com/premier-league/startseite/wettbewerb/GB1"
+]
+
 def get_competitions():
     for link in soup.select("ul.tm-button-list li a"):
         href = link.get("href", "")
@@ -47,10 +67,11 @@ def get_competitions():
     for competition in competitions:
         links_list.append(competition["competition_link"])
 
-    return links_list
+    # return links_list
+    return x
 
-print(get_competitions())
-with open("competitions.txt", "a") as f:
-    for competition in competitions:
-        f.write(split_string(competition["competition_name"]))
-        f.write("\n")
+# print(get_competitions())
+# with open("competitions.txt", "a") as f:
+#     for competition in competitions:
+#         f.write(split_string(competition["competition_name"]))
+#         f.write("\n")

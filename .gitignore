@@ -23,7 +23,6 @@ __pycache__/
 # Environment Variables
 # ========================
 .env
-.env.*
 backend/.env
 frontend/.env
 

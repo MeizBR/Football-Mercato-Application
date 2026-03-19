@@ -10,6 +10,8 @@ headers = get_machine_headers.get_machine_headers()
 clubs = []
 unique_set = set()
 
+t = []
+
 with open("club-ids-to-names.json", "w") as f:
     f.write("[\n")
 
@@ -18,10 +20,14 @@ for competition in get_competitions.get_competitions():
     response = requests.get(competition, headers=headers)
     soup = BeautifulSoup(response.text, "html.parser")
 
+    for i in soup.select("td[class='rechts hauptlink'] span"):
+        title = i.get("title", "")
+        t.append(int(title[14:len(title) - 6]))
+
     for link in soup.select("td.hauptlink a"):
         href = link.get("href", "")
 
-        club_name_url = href[1:href.find("/startseite")]
+        club_name_url = "https://www.transfermarkt.com" + href
         
         match = re.search(r"/verein/(\d+)", href)
         if match:
@@ -37,8 +43,8 @@ for competition in get_competitions.get_competitions():
 
             clubs.append(club_object)
 
-            with open("club-ids-to-names.json", "a") as f:
-                f.write(json.dumps(club_object) + ",\n")
+            # with open("club-ids-to-names.json", "a") as f:
+            #     f.write(json.dumps(club_object) + ",\n")
 
             # if club_id not in unique_set:
             #     with open("club-ids-to-names.json", "a") as f:
@@ -48,6 +54,12 @@ for competition in get_competitions.get_competitions():
             #     continue
         else:
             continue
+
+clubs = clubs[:max(t)]
+
+with open("club-ids-to-names.json", "a") as f:
+    for club in clubs:
+        f.write(json.dumps(club) + ",\n")
 
 with open("club-ids-to-names.json", "a") as f:
     f.write("]")

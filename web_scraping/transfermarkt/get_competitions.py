@@ -28,24 +28,72 @@ competitions_links = set()
 competitions = []
 links_list = []
 
-# x = [
-#     "https://www.transfermarkt.com/premier-league/startseite/wettbewerb/GB1",
-#     "https://www.transfermarkt.com/laliga/startseite/wettbewerb/ES1",
-#     "https://www.transfermarkt.com/serie-a/startseite/wettbewerb/IT1",
-#     "https://www.transfermarkt.com/bundesliga/startseite/wettbewerb/L1",
-#     "https://www.transfermarkt.com/ligue-1/startseite/wettbewerb/FR1",
-#     "https://www.transfermarkt.com/liga-nos/startseite/wettbewerb/PO1",
-#     "https://www.transfermarkt.com/eredivisie/startseite/wettbewerb/NL1",
-#     "https://www.transfermarkt.com/jupiler-pro-league/startseite/wettbewerb/BE1",
-#     "https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1",
-#     "https://www.transfermarkt.com/eliteserien/startseite/wettbewerb/NO1",
-#     "https://www.transfermarkt.com/allsvenskan/startseite/wettbewerb/SE1",
-#     "https://www.transfermarkt.com/super-league/startseite/wettbewerb/C1",
-#     "https://www.transfermarkt.com/superligaen/startseite/wettbewerb/DK1"
-# ]
-
 x = [
-    "https://www.transfermarkt.com/premier-league/startseite/wettbewerb/GB1"
+    {
+        "name": "premier-league",
+        "link": "https://www.transfermarkt.com/premier-league/startseite/wettbewerb/GB1",
+        "clubs": 20
+    },
+    {
+        "name": "laliga",
+        "link": "https://www.transfermarkt.com/laliga/startseite/wettbewerb/ES1",
+        "clubs": 20
+    },
+    {
+        "name": "serie-a",
+        "link": "https://www.transfermarkt.com/serie-a/startseite/wettbewerb/IT1",
+        "clubs": 20
+    },
+    {
+        "name": "bundesliga",
+        "link": "https://www.transfermarkt.com/bundesliga/startseite/wettbewerb/L1",
+        "clubs": 18
+    },
+    {
+        "name": "ligue-1",
+        "link": "https://www.transfermarkt.com/ligue-1/startseite/wettbewerb/FR1",
+        "clubs": 18
+    },
+    {
+        "name": "liga-nos",
+        "link": "https://www.transfermarkt.com/liga-nos/startseite/wettbewerb/PO1",
+        "clubs": 18
+    },
+    {
+        "name": "eredivisie",
+        "link": "https://www.transfermarkt.com/eredivisie/startseite/wettbewerb/NL1",
+        "clubs": 18
+    },
+    {
+        "name": "jupiler-pro-league",
+        "link": "https://www.transfermarkt.com/jupiler-pro-league/startseite/wettbewerb/BE1",
+        "clubs": 16
+    },
+    {
+        "name": "super-lig",
+        "link": "https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1",
+        "clubs": 20
+    },
+    {
+        "name": "eliteserien",
+        "link": "https://www.transfermarkt.com/eliteserien/startseite/wettbewerb/NO1",
+        "clubs": 16
+    },
+    {
+        "name": "allsvenskan",
+        "link": "https://www.transfermarkt.com/allsvenskan/startseite/wettbewerb/SE1",
+        "clubs": 16
+    },
+    {
+        "name": "super-league",
+        "link": "https://www.transfermarkt.com/super-league/startseite/wettbewerb/C1",
+        "clubs": 16
+    },
+    {
+        "name": "super-liga",
+        "link": "https://www.transfermarkt.com/superligaen/startseite/wettbewerb/DK1",
+        "clubs": 12
+    }
 ]
 
 def get_competitions():

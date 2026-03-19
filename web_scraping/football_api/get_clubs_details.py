@@ -8,7 +8,7 @@ headers = {
 }
 
 params = {
-    "league": "39",
+    "league": "207",
     "season": "2024"
 }
 
@@ -42,7 +42,7 @@ for team in data_json["response"]:
 
     teams.append(t)
 
-with open("Premier-League-Clubs-Football-API.json", "w", encoding="utf-8") as f:
+with open("Super-League-Clubs-Football-API.json", "w", encoding="utf-8") as f:
     json.dump(teams, f, indent=2)
 
 print(teams)

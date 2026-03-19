@@ -7,22 +7,21 @@ import json
 
 headers = get_machine_headers.get_machine_headers()
 
-clubs = []
-unique_set = set()
-
-t = []
-
-with open("club-ids-to-names.json", "w") as f:
-    f.write("[\n")
-
 for competition in get_competitions.get_competitions():
 
-    response = requests.get(competition, headers=headers)
+    clubs = []
+    unique_set = set()
+    # t = []
+
+    with open(f"{competition["name"]}-list-of-clubs.json", "w") as f:
+        f.write("[\n")
+
+    response = requests.get(competition["link"], headers=headers)
     soup = BeautifulSoup(response.text, "html.parser")
 
-    for i in soup.select("td[class='rechts hauptlink'] span"):
-        title = i.get("title", "")
-        t.append(int(title[14:len(title) - 6]))
+    # for i in soup.select("td[class='rechts hauptlink'] span"):
+    #     title = i.get("title", "")
+    #     t.append(int(title[14:len(title) - 6]))
 
     for link in soup.select("td.hauptlink a"):
         href = link.get("href", "")
@@ -42,24 +41,14 @@ for competition in get_competitions.get_competitions():
             print(club_object)
 
             clubs.append(club_object)
-
-            # with open("club-ids-to-names.json", "a") as f:
-            #     f.write(json.dumps(club_object) + ",\n")
-
-            # if club_id not in unique_set:
-            #     with open("club-ids-to-names.json", "a") as f:
-            #         f.write(json.dumps(club_object) + ",\n")
-            #     unique_set.add(club_id)
-            # else:
-            #     continue
         else:
             continue
 
-clubs = clubs[:max(t)]
+    clubs = clubs[:competition["clubs"]]
 
-with open("club-ids-to-names.json", "a") as f:
-    for club in clubs:
-        f.write(json.dumps(club) + ",\n")
+    with open(f"{competition["name"]}-list-of-clubs.json", "a") as f:
+        for club in clubs:
+            f.write(json.dumps(club) + ",\n")
 
-with open("club-ids-to-names.json", "a") as f:
-    f.write("]")
+    with open(f"{competition["name"]}-list-of-clubs.json", "a") as f:
+        f.write("]")

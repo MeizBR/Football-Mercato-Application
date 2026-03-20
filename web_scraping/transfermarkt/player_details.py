@@ -1,22 +1,6 @@
 from bs4 import BeautifulSoup
 import re
 import requests
-import json
-import pymongo
-import os
-
-host = os.environ.get("MONGODB_HOST")
-database = os.environ.get("MONGODB_DATABASE")
-user = os.environ.get("MONGODB_USER")
-password = os.environ.get("MONGODB_PASSWORD")
-
-myclient = pymongo.MongoClient(f"mongodb+srv://{user}:{password}@{host}")
-
-mydb = myclient["football-mercato"]
-
-mycol = mydb["transfermarkt-market-value-history-news"]
-
-logs = []
 
 def get_player_details(player_id, player_name, headers):
     url = "https://www.transfermarkt.com/" + player_name + "/profil/spieler/" + str(player_id)
@@ -51,13 +35,13 @@ def get_player_details(player_id, player_name, headers):
         "player_market_value": player_market_value,
         "player_club": player_club,
         "club_league": club_league,
-        "player_club_league_level": player_club_league_level,
-        "player_international_squad": player_international_squad,
-        "player_birthplace": player_birthplace,
-        "player_agent": player_agent,
-        "player_height": player_height,
-        "player_citizenship": player_citizenship,
-        "player_position": player_position,
+        "player_club_league_level": player_club_league_level if player_club_league_level else None,
+        "player_international_squad": player_international_squad if player_international_squad else None,
+        "player_birthplace": player_birthplace if player_birthplace else None,
+        "player_agent": player_agent if player_agent else None,
+        "player_height": player_height if player_height else None,
+        "player_citizenship": player_citizenship if player_citizenship else None,
+        "player_position": player_position if player_position else None,
         "player_image_url": player_image_url,
         "player_further_information": player_further_information_list
     }
@@ -77,21 +61,12 @@ def get_player_club_details(player_id, player_name, headers):
     player_joined_date = re.search("Joined: (.*)", soup.text).group(1)
     player_contract_expiry = re.search("Contract expires: (.*)", soup.text).group(1)
 
-    # Reveal the name of the club from the given id
-    club_id = 0
-    with open("club-ids-to-names.json", "r") as f:
-        club_ids_to_names = json.load(f)
-        for club in club_ids_to_names:
-            if club["club_name"] == player_club:
-                club_id = club["club_id"]
-
     player_club_details = {
         "player_club": player_club,
         "club_league": club_league,
         "player_club_league_level": player_club_league_level,
         "player_joined_date": player_joined_date,
-        "player_contract_expiry": player_contract_expiry,
-        "club_id": club_id
+        "player_contract_expiry": player_contract_expiry
     }
 
     return player_club_details

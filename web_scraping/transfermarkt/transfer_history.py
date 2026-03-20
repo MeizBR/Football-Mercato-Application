@@ -1,17 +1,4 @@
 import requests
-import pymongo
-import os
-
-host = os.environ.get("MONGODB_HOST")
-database = os.environ.get("MONGODB_DATABASE")
-user = os.environ.get("MONGODB_USER")
-password = os.environ.get("MONGODB_PASSWORD")
-
-myclient = pymongo.MongoClient(f"mongodb+srv://{user}:{password}@{host}")
-
-mydb = myclient["football-mercato"]
-
-mycol = mydb["transfermarkt-transfer-history-news"]
 
 def get_transfer_history(player_id, headers):
     transfer_history_url = "https://tmapi-alpha.transfermarkt.technology/transfer/history/player/" + str(player_id)
@@ -23,7 +10,6 @@ def get_transfer_history(player_id, headers):
 
     value = {}
     values = []
-    logs = []
 
     transfer_history_result = transfer_history_response["data"]["history"]["terminated"]
 
@@ -57,22 +43,5 @@ def get_transfer_history(player_id, headers):
         }
 
         values.append(value)
-        x = mycol.insert_one(value)
-        logs.append(x.inserted_id)
 
-    return values, logs
-
-if __name__ == "__main__":
-    headers = {
-        "User-Agent": "Mozilla/5.0"
-    }
-
-    transfers_history_data, logs = get_transfer_history(headers)
-
-    print("Transfer news table:\n")
-    for item in transfers_history_data:
-        print(item)
-
-    print("\nLogs:\n")
-    for log in logs:
-        print(log)
+    return values

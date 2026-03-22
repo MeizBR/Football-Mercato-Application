@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import re
 import pymongo
 import os
+import time
 
 host = os.environ.get("MONGODB_HOST")
 database = os.environ.get("MONGODB_DATABASE")
@@ -25,6 +26,9 @@ rumours_list = []
 logs = []
 
 def get_rumours_function(headers, index):
+    mycol.delete_many({})
+    time.sleep(2)
+
     for i in range(1, index + 1):
         rumours_url = "https://www.transfermarkt.com/rumourmill/detail/forum/154/page/" + str(i) + "/"
 

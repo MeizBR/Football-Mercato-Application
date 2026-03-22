@@ -124,21 +124,27 @@ def get_player_details(player_id, player_name, headers):
         player_further_information_list = []
 
 
+    # player_details = {
+    #     "player_name": player_name,
+    #     "player_number": player_number,
+    #     "player_market_value": player_market_value,
+    #     "player_club": player_club,
+    #     "club_league": club_league,
+    #     "player_club_league_level": player_club_league_level,
+    #     "player_international_squad": player_international_squad,
+    #     "player_birthplace": player_birthplace,
+    #     "player_agent": player_agent,
+    #     "player_height": player_height,
+    #     "player_citizenship": player_citizenship,
+    #     "player_position": player_position,
+    #     "player_image_url": player_image_url,
+    #     "player_further_information": player_further_information_list,
+    # }
+
     player_details = {
         "player_name": player_name,
-        "player_number": player_number,
-        "player_market_value": player_market_value,
         "player_club": player_club,
-        "club_league": club_league,
-        "player_club_league_level": player_club_league_level,
-        "player_international_squad": player_international_squad,
-        "player_birthplace": player_birthplace,
-        "player_agent": player_agent,
-        "player_height": player_height,
-        "player_citizenship": player_citizenship,
-        "player_position": player_position,
         "player_image_url": player_image_url,
-        "player_further_information": player_further_information_list,
     }
 
     return player_details

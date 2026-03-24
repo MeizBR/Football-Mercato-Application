@@ -49,13 +49,13 @@ def get_player_details(player_id, player_name, headers):
         "h1.data-header__headline-wrapper"
     )
 
-    player_number = safe_select_text(
-        soup,
-        'span.data-header__shirt-number'
-    )
+    # player_number = safe_select_text(
+    #     soup,
+    #     'span.data-header__shirt-number'
+    # )
 
-    if player_number:
-        player_number = player_number.replace("#", "")
+    # if player_number:
+    #     player_number = player_number.replace("#", "")
 
     player_market_value = safe_select_text(
         soup,
@@ -67,40 +67,40 @@ def get_player_details(player_id, player_name, headers):
         'span.data-header__club'
     )
 
-    club_league = safe_select_text(
-        soup,
-        'span.data-header__league'
-    )
+    # club_league = safe_select_text(
+    #     soup,
+    #     'span.data-header__league'
+    # )
 
-    player_club_league_level = safe_regex(
-        r"League level:\s*(.*)",
-        page_text
-    )
+    # player_club_league_level = safe_regex(
+    #     r"League level:\s*(.*)",
+    #     page_text
+    # )
 
-    player_international_squad = safe_regex(
-        r"Current international:.*?([A-Za-z].*?)\n",
-        page_text
-    )
+    # player_international_squad = safe_regex(
+    #     r"Current international:.*?([A-Za-z].*?)\n",
+    #     page_text
+    # )
 
-    player_birthplace = safe_regex(
-        r"Place of birth:.*?([A-Za-z].*?) ",
-        page_text
-    )
+    # player_birthplace = safe_regex(
+    #     r"Place of birth:.*?([A-Za-z].*?) ",
+    #     page_text
+    # )
 
-    player_agent = safe_regex(
-        r"Agent:.*?([A-Za-z].*?)\n",
-        page_text
-    )
+    # player_agent = safe_regex(
+    #     r"Agent:.*?([A-Za-z].*?)\n",
+    #     page_text
+    # )
 
-    player_height = safe_regex(
-        r"Height:.*?([0-9].*?)\n",
-        page_text
-    )
+    # player_height = safe_regex(
+    #     r"Height:.*?([0-9].*?)\n",
+    #     page_text
+    # )
 
-    player_citizenship = safe_regex(
-        r"Citizenship:.*?([A-Za-z].*?)\n",
-        page_text
-    )
+    # player_citizenship = safe_regex(
+    #     r"Citizenship:.*?([A-Za-z].*?)\n",
+    #     page_text
+    # )
 
     player_position = safe_regex(
         r"Position:.*?([A-Za-z].*?)\n",
@@ -113,15 +113,15 @@ def get_player_details(player_id, player_name, headers):
         "src"
     )
 
-    further_info = safe_select_text(
-        soup,
-        "div.content"
-    )
+    # further_info = safe_select_text(
+    #     soup,
+    #     "div.content"
+    # )
 
-    if further_info:
-        player_further_information_list = further_info.split(".")
-    else:
-        player_further_information_list = []
+    # if further_info:
+    #     player_further_information_list = further_info.split(".")
+    # else:
+    #     player_further_information_list = []
 
 
     # player_details = {
@@ -144,7 +144,9 @@ def get_player_details(player_id, player_name, headers):
     player_details = {
         "player_name": player_name,
         "player_club": player_club,
-        "player_image_url": player_image_url,
+        "player_market_value": player_market_value,
+        "player_position": player_position,
+        "player_image_url": player_image_url
     }
 
     return player_details

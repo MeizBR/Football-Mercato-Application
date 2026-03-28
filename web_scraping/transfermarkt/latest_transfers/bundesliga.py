@@ -14,7 +14,7 @@ myclient = pymongo.MongoClient(f"mongodb+srv://{user}:{password}@{host}")
 
 mydb = myclient["football-mercato"]
 
-mycol = mydb["allsvenskan-latest-transfers"]
+mycol = mydb["bundesliga-latest-transfers"]
 
 def get_player_id(s):
     for i in range(55, len(s)):

@@ -20,11 +20,11 @@ function TransferCard({ transfer }) {
       <hr />
       <div className="card-content">
         <div className="card-title dancing-script">Date</div>
-        <p>{formattedDate}</p>
+        <p className="datatype-style">{formattedDate}</p>
         <div className="card-title dancing-script">Title</div>
-        <p>{transfer.Title}</p>
+        <p className="datatype-style">{transfer.Title}</p>
         <div className="card-title dancing-script">Content</div>
-        <p> {transfer.Content}</p>
+        <p className="datatype-style"> {transfer.Content}</p>
       </div>
     </div>
   );

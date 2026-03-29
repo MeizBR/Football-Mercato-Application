@@ -4,4 +4,4 @@ const API = axios.create({
   baseURL: "http://localhost:5000/api",
 });
 
-export const fetchTransfers = () => API.get("/transfers");
+export const fetchLatestRumours = () => API.get("/transfermarkt/getLatestRumours");

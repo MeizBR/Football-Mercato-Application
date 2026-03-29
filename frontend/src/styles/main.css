@@ -28,42 +28,48 @@ body {
   gap: 30px;
   padding: 15px;
   background: #f4f4f4;
+  border-bottom: 3px black solid;
 }
 
 .navbar a {
   text-decoration: none;
   font-weight: bold;
   color: #000;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  padding: 2px;
 }
 
-.hero {
-  position: relative;
-  overflow: hidden;
+.navbar a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #000;
+  color: lightgray;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  padding: 2px;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0.6)
-  );
+.navbar #navbar-logos {
+  border: 2px solid crimson;
+  border-radius: 5px;
+  padding: 2px;
 }
 
 .hero-image {
-  width: 98%;
-  height: 450px;
+  width: 100%;
+  height: 500px;
   border: 2px solid palevioletred;
   border-radius: 5px;
   animation: pulseHero 4s infinite ease-in-out;
 }
 
 @keyframes pulseHero {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
+  0% { border: 10px solid crimson;}
+  25% { border: 10px solid palevioletred;}
+  50% { border: 10px solid pink;}
+  75% { border: 10px solid lightcoral;}
+  100% { border: 10px solid orangered;}
 }
 
 .clubs-bar {
@@ -159,4 +165,13 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 23px;
+}
+
+.datatype-style {
+  font-family: "Datatype", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }

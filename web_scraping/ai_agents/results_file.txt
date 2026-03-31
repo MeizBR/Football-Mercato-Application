@@ -1,78 +1,64 @@
-Here’s a **latest football transfer intelligence snapshot** focused on **confirmed moves, credible rumours, renewals, loans, and advanced talks**, while **excluding match news**.
-
-## 1) Confirmed / official
-- **Ryan Gravenberch renewed with Liverpool** on **7 March 2026**, with Liverpool confirming a new long-term contract on the club’s official site. ([liverpoolfc.com](https://www.liverpoolfc.com/news/ryan-gravenberch-signs-new-long-term-liverpool-contract?utm_source=openai))
-- **Harry Maguire’s Manchester United deal was extended to June 2026** after Ruben Amorim confirmed United had triggered the one-year option in his contract. ([manutd.com](https://www.manutd.com/en/news/detail/ruben-amorim-confirms-harry-maguire-contract-news?utm_source=openai))
-- **Jesse Lingard joined Corinthians on a free transfer**, signing until the end of **2026** with an option for an extra year, according to multiple major reports after the move was completed. Corinthians’ own media channels also published his first training images. ([skysports.com](https://www.skysports.com/football/news/12040/13516192/jesse-lingard-former-manchester-united-forward-joins-brazil-side-corinthians-on-a-free-transfer?utm_source=openai))
-- **Atlanta United signed Matías Galarza from River Plate on loan** through **30 June 2026**, with a purchase option, per MLS’ official report on the club announcement. ([mlssoccer.com](https://www.mlssoccer.com/news/atlanta-united-acquire-midfielder-matias-galarza-from-river-plate?utm_source=openai))
-
-## 2) Contract renewals worth flagging
-- **Martina Rosucci renewed with Juventus until 30 June 2027**, officially announced on **9 March 2026**. ([juventus.com](https://www.juventus.com/en/news/articles/martina-rosucci-renews-with-juventus-until-2027?utm_source=openai))
-- **Serge Gnabry extended with Bayern until 2028**, announced by Bayern in February 2026. ([fcbayern.com](https://fcbayern.com/en/news/2026/02/serge-gnabry-extends-with-bayern-to-2028?utm_source=openai))
-- **Dayot Upamecano also signed a new Bayern contract through 2030** in February 2026. ([fcbayern.com](https://fcbayern.com/en/news/2026/02/dayot-upamecano-extends-with-bayern-to-2030?utm_source=openai))
-- In women’s football, **Kadeisha Buchanan extended with Chelsea until 2027**, while **Becky Spencer joined Chelsea permanently** on a one-year deal with an option to 2027. ([chelseafc.com](https://www.chelseafc.com/en/news/article/kadeisha-buchanan-extends-contract-with-chelsea?utm_source=openai))
-
-## 3) Loan deals
-- **Matías Galarza to Atlanta United** is one of the clearest recent loan deals: loan from River Plate until **30 June 2026** with an option to buy. ([mlssoccer.com](https://www.mlssoccer.com/news/atlanta-united-acquire-midfielder-matias-galarza-from-river-plate?utm_source=openai))
-- **Ash Palmer joined FC Halifax Town on loan from York City**, officially confirmed by Halifax on **7 March 2026**. ([fchalifaxtown.com](https://fchalifaxtown.com/news/ash-palmer-joins-on-loan/?utm_source=openai))
-
-## 4) Advanced negotiations / strong live situations
-- **Bayern are in talks with Harry Kane over a contract extension**, per ESPN’s roundup citing Sport Bild. This is not official yet, but it is a live renewal situation worth tracking closely. ([espn.in](https://www.espn.in/blog/transfer-talk/79/message))
-- **RB Leipzig have agreed a deal worth around €20m for Rocco Reitz**, per ESPN’s roundup citing Florian Plettenberg. That reads as an **advanced club-to-club stage**, though not yet official. ([espn.in](https://www.espn.in/blog/transfer-talk/79/message))
-- **Antoine Griezmann’s possible move to Orlando City is on hold**, with ESPN reporting that talks existed but the player paused the move for this window. That makes it a live-but-cooled file rather than an active imminent deal. ([espn.com](https://www.espn.com/soccer/story/_/id/48100370/atletico-madrid-antoine-griezmann-pauses-mls-move-orlando-city-sources?utm_source=openai))
-
-## 5) Credible rumours to monitor
-I’d separate these by confidence:
-
-**Higher-credibility monitor**
-- **Inter Miami have entered the race for Bernardo Silva**, according to ESPN’s Transfer Talk citing *Gazzetta dello Sport*; the report frames him as a potential free-agent target this summer. ([espn.in](https://www.espn.in/blog/transfer-talk/79/message))
-- **Vitinha has been linked with Real Madrid**, but the PSG midfielder publicly said it would be “foolish” to leave and stressed he is happy in Paris. That doesn’t kill the story completely, but it cools it significantly. ([espn.com](https://www.espn.com/soccer/story/_/id/48119927/vitinha-foolish-leave-psg-real-madrid-rumour))
-
-**Lower-confidence / watchlist only**
-- **Barcelona, Manchester United and Tottenham monitoring Evan Ndicka**, per ESPN’s roundup citing Nicolo Schira. ([espn.in](https://www.espn.in/blog/transfer-talk/79/message))
-- **Manchester United interest in Marcus Tavernier**, per ESPN’s roundup citing Football Insider. ([espn.in](https://www.espn.in/blog/transfer-talk/79/message))
-- **Barcelona exploring Abde Ezzalzouli as an alternative if Marcus Rashford is not signed permanently**, per ESPN’s roundup citing *Marca*. ([espn.in](https://www.espn.in/blog/transfer-talk/79/message))
-
-## 6) Best “mercato app” shortlist right now
-If you’re populating an app feed, the strongest current entries from the latest verified sweep are:
-
-### Confirmed
-1. Ryan Gravenberch — **Liverpool** — **contract renewal** — official — 7 Mar 2026. ([liverpoolfc.com](https://www.liverpoolfc.com/news/ryan-gravenberch-signs-new-long-term-liverpool-contract?utm_source=openai))
-2. Harry Maguire — **Manchester United** — **option triggered / extension to June 2026** — official club confirmation. ([manutd.com](https://www.manutd.com/en/news/detail/ruben-amorim-confirms-harry-maguire-contract-news?utm_source=openai))
-3. Jesse Lingard — **Corinthians** — **free transfer** — completed. ([skysports.com](https://www.skysports.com/football/news/12040/13516192/jesse-lingard-former-manchester-united-forward-joins-brazil-side-corinthians-on-a-free-transfer?utm_source=openai))
-4. Matías Galarza — **Atlanta United** — **loan from River Plate with option to buy** — completed. ([mlssoccer.com](https://www.mlssoccer.com/news/atlanta-united-acquire-midfielder-matias-galarza-from-river-plate?utm_source=openai))
-5. Martina Rosucci — **Juventus Women** — **renewal until 2027** — official. ([juventus.com](https://www.juventus.com/en/news/articles/martina-rosucci-renews-with-juventus-until-2027?utm_source=openai))
-
-### Advanced / live
-6. Harry Kane — **Bayern** — **extension talks ongoing**. ([espn.in](https://www.espn.in/blog/transfer-talk/79/message))     
-7. Rocco Reitz — **RB Leipzig** — **deal reportedly agreed around €20m**. ([espn.in](https://www.espn.in/blog/transfer-talk/79/message))
-8. Antoine Griezmann — **Orlando City** — **move discussed but paused/put on hold**. ([espn.com](https://www.espn.com/soccer/story/_/id/48100370/atletico-madrid-antoine-griezmann-pauses-mls-move-orlando-city-sources?utm_source=openai))
-
-### Rumour watch
-9. Bernardo Silva — **Inter Miami / Juventus / Benfica interest** — active rumour, not advanced enough to call imminent. ([espn.in](https://www.espn.in/blog/transfer-talk/79/message))
-10. Vitinha — **Real Madrid links** — player has publicly pushed back. ([espn.com](https://www.espn.com/soccer/story/_/id/48119927/vitinha-foolish-leave-psg-real-madrid-rumour))
-
-## 7) Suggested tagging for your app
-A clean data model from this sweep would be:
-
-- **official_confirmed**
-- **official_renewal**
-- **official_loan**
-- **advanced_talks**
-- **agreement_reported**
-- **credible_rumour**
-- **rumour_cooled**
-- **watchlist_only**
-
-Example:
-- Lingard → `official_confirmed`
-- Galarza → `official_loan`
-- Gravenberch / Maguire / Rosucci → `official_renewal`
-- Kane extension → `advanced_talks`
-- Rocco Reitz to Leipzig → `agreement_reported`
-- Bernardo Silva to Inter Miami → `credible_rumour`
-- Vitinha to Real Madrid → `rumour_cooled`
-
-If you want, I can turn this into a **JSON feed schema** with fields like:
-`player`, `from_club`, `to_club`, `deal_type`, `status`, `confidence`, `source_type`, `date_reported`, `fee`, `contract_end`, `summary`.
-
+{
+  "news": [
+    {
+      "id": "1",
+      "title": "Atl\u00e9tico Madrid deny active negotiations over \u00c1ngel Correa amid exit speculation",
+      "player_name": "\u00c1ngel Correa",
+      "club_from": "Atl\u00e9tico Madrid",
+      "club_to": "Tigres UANL / River Plate",
+      "news_type": "rumour",
+      "source": "TribalFootball (citing Atl\u00e9tico Madrid statement)",
+      "date": "2026-03-16",
+      "reliability_score": 72,
+      "summary": "Atl\u00e9tico Madrid issued a statement saying Correa remains under contract until June 30, 2026 and that no club had contacted them to open negotiations, despite growing speculation linking him with Tigres UANL and River Plate."
+    },
+    {
+      "id": "2",
+      "title": "Catarina Macario edging closer to Chelsea exit with Barcelona offer reported",
+      "player_name": "Catarina Macario",
+      "club_from": "Chelsea Women",
+      "club_to": "Barcelona Femen\u00ed",
+      "news_type": "near_deal",
+      "source": "Goal",
+      "date": "2026-03-11",
+      "reliability_score": 61,
+      "summary": "Reports indicate Macario has turned down a new Chelsea deal and has an offer from Barcelona on the table, making a summer move increasingly plausible as her contract situation remains unresolved."
+    },
+    {
+      "id": "3",
+      "title": "Manchester City officially complete Marc Gu\u00e9hi signing from Crystal Palace",
+      "player_name": "Marc Gu\u00e9hi",
+      "club_from": "Crystal Palace",
+      "club_to": "Manchester City",
+      "news_type": "official",
+      "source": "PremierLeague.com",
+      "date": "2026-01-19",
+      "reliability_score": 96,
+      "summary": "Manchester City confirmed the signing of England defender Marc Gu\u00e9hi from Crystal Palace on a five-and-a-half-year contract during the January window, making this one of the major completed deals still relevant entering late March."
+    },
+    {
+      "id": "4",
+      "title": "Liverpool and Manchester City tracking Andrea Cambiaso situation at Juventus",
+      "player_name": "Andrea Cambiaso",
+      "club_from": "Juventus",
+      "club_to": "Liverpool / Manchester City",
+      "news_type": "monitoring",
+      "source": "FootballTransfers",
+      "date": "2026-02-25",
+      "reliability_score": 48,
+      "summary": "Cambiaso remains a monitored full-back option for Premier League heavyweights, with reports stating Liverpool and Manchester City are both keeping close tabs on his status ahead of the summer market."
+    },
+    {
+      "id": "5",
+      "title": "Chelsea, Marseille and Benfica monitoring Feyenoord winger Anis Hadj Moussa",
+      "player_name": "Anis Hadj Moussa",
+      "club_from": "Feyenoord",
+      "club_to": "Chelsea / Marseille / Benfica",
+      "news_type": "monitoring",
+      "source": "FootballTransfers",
+      "date": "2026-01-18",
+      "reliability_score": 44,
+      "summary": "Anis Hadj Moussa has emerged as a watched attacking option, with Chelsea, Marseille and Benfica all reported to be closely monitoring the Feyenoord winger before the next transfer window."
+    }
+  ]
+}

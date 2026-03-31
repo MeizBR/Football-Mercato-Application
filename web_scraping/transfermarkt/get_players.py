@@ -28,11 +28,11 @@ mydb = myclient["football-mercato"]
 
 headers = get_machine_headers.get_machine_headers()
 
-with open("premier-league-list-of-clubs.json", "r") as f:
+with open("laliga-list-of-clubs.json", "r") as f:
     players = []
     logs = []
 
-    mycol = mydb["premier-league-players-list"]
+    mycol = mydb["la-liga-players-list"]
 
     file = json.load(f)
     for club in file:

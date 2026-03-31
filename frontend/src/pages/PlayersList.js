@@ -49,8 +49,10 @@ function PlayersList() {
       <Navbar />
       <ClubsBar />
 
-      <div className="btn-group">
-        <button type="button" className="btn btn-danger">Danger</button>
+      <h3 className="datatype-style" style={{marginTop: "50px"}} >Top 5 Leagues Players List</h3>
+
+      <div className="btn-group" style={{marginBottom: "50px"}}>
+        <button type="button" className="btn btn-danger datatype-style">Choose the League from the Dropdown Menu</button>
         <button type="button" className="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
             <span className="visually-hidden">Toggle Dropdown</span>
         </button>
@@ -76,12 +78,22 @@ function PlayersList() {
                     <h5 class="card-title datatype-style"><span style={{color: "crimson"}}>Player Market Value: </span>{p.basic_details.player_market_value}</h5>
                     <h5 class="card-title datatype-style"><span style={{color: "crimson"}}>Player Position: </span>{p.basic_details.player_position}</h5>
                     <h5 class="card-title datatype-style" style={{color: "crimson"}}>Rumours:</h5>
-                    {(p.rumours).map((rumour) => (
-                        <ul key={rumour._id}>
-                            <li class="datatype-style"><h5 style={{color: "crimson"}}>Club: </h5>{rumour.club}</li>
-                            <li class="datatype-style"><h5 style={{color: "crimson"}}>Competition: </h5>{rumour.competition}</li>
-                        </ul>
-                    ))}
+                    <table class="table-auto rumours-table">
+                        <thead>
+                            <tr>
+                                <th style={{color: "steelblue"}}>Club</th>
+                                <th style={{color: "steelblue"}}>Competition</th>
+                            </tr>
+                        </thead>
+                        {(p.rumours).map((rumour) => (
+                            <tbody>
+                                <tr>
+                                    <td class="datatype-style">{rumour.club}</td>
+                                    <td class="datatype-style">{rumour.competition}</td>
+                                </tr>
+                            </tbody>
+                        ))}
+                    </table>
                 </div>
                 </div>
             </div>

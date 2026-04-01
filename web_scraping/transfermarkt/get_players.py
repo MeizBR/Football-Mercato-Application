@@ -32,7 +32,7 @@ with open("laliga-list-of-clubs.json", "r") as f:
     players = []
     logs = []
 
-    mycol = mydb["la-liga-players-list"]
+    mycol = mydb["laliga-players-list"]
 
     file = json.load(f)
     for club in file:

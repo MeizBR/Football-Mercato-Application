@@ -81,7 +81,7 @@ function PlayersList() {
         <div key={p._id} class="card mb-3" style={{width: "95%"}}>
             <div class="row g-0">
                 <div class="col-md-4">
-                <img src={p.basic_details.player_image_url} class="img-fluid rounded-start" alt="player image" style={{width: "50%", height: "100%"}} />
+                <img src={p.basic_details.player_image_url} class="img-fluid rounded-start" alt="player image" style={{width: "70%", height: "100%", border: "2px solid crimson"}} />
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -89,7 +89,7 @@ function PlayersList() {
                         <h5 class="card-title datatype-style"><span style={{color: "crimson"}}>Player Club: </span>{p.basic_details.player_club}</h5>
                         <h5 class="card-title datatype-style"><span style={{color: "crimson"}}>Player Market Value: </span>{p.basic_details.player_market_value}</h5>
                         <h5 class="card-title datatype-style"><span style={{color: "crimson"}}>Player Position: </span>{p.basic_details.player_position}</h5>
-                        <h5 class="card-title datatype-style" style={{color: "crimson"}}>Rumours:</h5>
+                        <h5 class="card-title datatype-style" style={{color: "crimson"}}>Rumours Mill:</h5>
                         {!p.rumours || p.rumours.length === 0 ? (
                         <div className="alert alert-warning datatype-style" role="alert">
                             <h5>No rumours for {p.basic_details.player_name} yet !</h5>
@@ -98,8 +98,8 @@ function PlayersList() {
                         <table className="table-auto rumours-table">
                             <thead>
                                 <tr>
-                                    <th style={{ color: "steelblue" }}>Club</th>
-                                    <th style={{ color: "steelblue" }}>Competition</th>
+                                    <th style={{ color: "pink" }}>Club</th>
+                                    <th style={{ color: "pink" }}>Competition</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -112,56 +112,6 @@ function PlayersList() {
                             </tbody>
                         </table>
                         )}
-                        <hr />
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Currency</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table-group-divider">
-                                {p.market_value_history_details.slice(0, 3).map((m) => (
-                                    <tr>
-                                        <td scope="row" className="datatype-style">{m.date}</td>
-                                        <td scope="row" className="datatype-style">{m.amount}</td>
-                                        <td scope="row" className="datatype-style">{m.currency}</td>
-                                    </tr>
-                                ))
-                                }
-                            </tbody>
-                        </table>
-                        <hr />
-                        <div id="carouselExampleCaptions" class="carousel slide">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item">
-                                {
-                                p.gallery_images.slice(0, 3).map((i) => (
-                                <div class="grid grid-flow-col grid-rows-4 gap-4">
-                                    <img class="d-block w-100" src={i.image_url} alt="player-image"></img>
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5 className="datatype-style">{i.image_title}</h5>
-                                    </div>
-                                </div>
-                                ))
-                                }
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -173,10 +173,10 @@ body {
   font-weight: 500;
   font-style: normal;
   font-variation-settings:
-    "wdth" 100;
+    "width" 100;
 }
 
 .rumours-table tr td, tr th {
-  border: 2px solid steelblue;
+  border: 2px solid pink;
   padding: 0 10px;
 }

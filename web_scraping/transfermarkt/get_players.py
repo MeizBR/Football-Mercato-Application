@@ -28,11 +28,11 @@ mydb = myclient["football-mercato"]
 
 headers = get_machine_headers.get_machine_headers()
 
-with open("laliga-list-of-clubs.json", "r") as f:
+with open("bundesliga-list-of-clubs.json", "r") as f:
     players = []
     logs = []
 
-    mycol = mydb["laliga-players-list"]
+    mycol = mydb["bundesliga-players-list"]
 
     file = json.load(f)
     for club in file:
@@ -59,16 +59,21 @@ with open("laliga-list-of-clubs.json", "r") as f:
     for player in players:
         basic_details = player_details.get_player_details(player["player_id"], player["player_name"], headers)
         rumours = player_details.get_rumours(player["player_id"], headers)
-        transfer_hisotry_details = transfer_history.get_transfer_history(player["player_id"], headers)
-        market_value_history_details = market_value_history.fetch_market_value_history(player["player_id"], headers)
-        gallery_images = player_gallery.get_player_gallery(player["player_id"], headers)
+        # transfer_hisotry_details = transfer_history.get_transfer_history(player["player_id"], headers)
+        # market_value_history_details = market_value_history.fetch_market_value_history(player["player_id"], headers)
+        # gallery_images = player_gallery.get_player_gallery(player["player_id"], headers)
+
+        # player_object = {
+        #     "basic_details": basic_details,
+        #     "rumours": rumours,
+        #     "transfer_hisotry_details": transfer_hisotry_details,
+        #     "market_value_history_details": market_value_history_details,
+        #     "gallery_images": gallery_images
+        # }
 
         player_object = {
             "basic_details": basic_details,
             "rumours": rumours,
-            "transfer_hisotry_details": transfer_hisotry_details,
-            "market_value_history_details": market_value_history_details,
-            "gallery_images": gallery_images
         }
 
         x = mycol.insert_one(player_object)

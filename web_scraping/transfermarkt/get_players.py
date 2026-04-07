@@ -28,11 +28,11 @@ mydb = myclient["football-mercato"]
 
 headers = get_machine_headers.get_machine_headers()
 
-with open("bundesliga-list-of-clubs.json", "r") as f:
+with open("liga-nos-list-of-clubs.json", "r") as f:
     players = []
     logs = []
 
-    mycol = mydb["bundesliga-players-list"]
+    mycol = mydb["liga-nos-players-list"]
 
     file = json.load(f)
     for club in file:
@@ -77,4 +77,4 @@ with open("bundesliga-list-of-clubs.json", "r") as f:
         }
 
         x = mycol.insert_one(player_object)
-        print(x.inserted_id)
+        print(f"the player with id {x.inserted_id} was inserted")

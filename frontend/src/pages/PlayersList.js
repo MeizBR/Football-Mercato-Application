@@ -64,17 +64,10 @@ function PlayersList() {
       </div>
 
       {loading ? (
-        <>
-            <span class="placeholder col-12"></span>
-            <span class="placeholder col-12 bg-primary"></span>
-            <span class="placeholder col-12 bg-secondary"></span>
-            <span class="placeholder col-12 bg-success"></span>
-            <span class="placeholder col-12 bg-danger"></span>
-            <span class="placeholder col-12 bg-warning"></span>
-            <span class="placeholder col-12 bg-info"></span>
-            <span class="placeholder col-12 bg-light"></span>
-            <span class="placeholder col-12 bg-dark"></span>
-        </>
+        <div style={{width: "90%", marginBottom: "50px"}} class="d-flex align-items-center">
+            <h5 style={{marginLeft: "100px"}} className="datatype-style" role="status">Loading ... Please Wait !</h5>
+            <div class="spinner-border ms-auto" aria-hidden="true"></div>
+        </div>
         ) : (
 
       playersList.map(p => (
@@ -118,6 +111,19 @@ function PlayersList() {
         </div>
       ))
       )}
+
+        {(playersList.length == 0) ? 
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button">
+                    <h5 className="datatype-style">No Data Available Yet ! We Are Still Working On It !</h5>
+                </button>
+            </div> :
+            <div class="d-grid gap-2">
+                <button className="btn btn-primary datatype-style" type="button">
+                    <h5>Data Are Available and Fetched from Good Hands</h5>
+                </button>
+            </div>
+        }
 
       <Footer />
     </>

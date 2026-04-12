@@ -106,7 +106,7 @@ app.get('/api/transfermarkt/getLatestRumours', async (req, res) => {
   }
 });
 
-app.get('/api/transfermarkt/getTransfersHistory/:league', async (req, res) => {
+app.get('/api/football-api/getTransfersHistory/:league', async (req, res) => {
   try {
     const league = req.params.league;
 

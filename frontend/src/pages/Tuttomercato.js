@@ -26,9 +26,16 @@ function Tuttomercato() {
       </div>
 
       <main>
-        {tuttomercatoNews.map(t => (
+        {tuttomercatoNews.length > 0 ? 
+        (tuttomercatoNews.map(t => (
           <TuttomercatoCard key={t._id} news={t} />
-        ))}
+        ))) : (
+          <div>
+            <span class="placeholder col-6"></span>
+            <span class="placeholder w-75"></span>
+            <span class="placeholder" style={{width: "25%"}}></span>
+          </div>
+        )}
       </main>
 
       <Footer />

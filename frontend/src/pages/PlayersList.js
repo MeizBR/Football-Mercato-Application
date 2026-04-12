@@ -47,9 +47,9 @@ function PlayersList() {
       <Navbar />
       <ClubsBar />
 
-      <h3 className="datatype-style" style={{marginTop: "50px"}} >Top 5 Leagues Players List</h3>
+      <h3 className="datatype-style" style={{margin: "20px 30px 10px 30px"}} >Top 5 Leagues Players List</h3>
 
-      <div className="btn-group" style={{marginBottom: "50px"}}>
+      <div className="btn-group" style={{margin: "10px 30px 50px 30px"}}>
         <button type="button" className="btn btn-danger datatype-style">Choose the League from the Dropdown Menu</button>
         <button type="button" className="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
             <span className="visually-hidden">Toggle Dropdown</span>

@@ -176,7 +176,14 @@ body {
     "width" 100;
 }
 
-.rumours-table tr td, tr th {
+.rumours-table tr td, .rumours-table tr th {
   border: 2px solid pink;
   padding: 0 10px;
+}
+
+.transfers-club-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
 }

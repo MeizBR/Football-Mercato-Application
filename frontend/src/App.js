@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import Rumours from "./pages/Rumours"
 import PlayersList from "./pages/PlayersList";
 import Tuttomercato from "./pages/Tuttomercato";
+import TransfersHistory from "./pages/TransfersHistory";
+import ClubsList from "./pages/ClubsList";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Route path="/rumours" element={<Rumours />} />
         <Route path="/playersList" element={<PlayersList />} />
         <Route path="/tuttomercato" element={<Tuttomercato />} />
+        <Route path="/transfersHistory" element={<TransfersHistory />} />
+        <Route path="/clubsList" element={<ClubsList />} />
       </Routes>
     </BrowserRouter>
   );

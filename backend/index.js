@@ -170,4 +170,5 @@ app.get('/api/transfermarkt/getClubsList/:league', async (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`MongoDB connected to ${host} database: ${database}`);
 });

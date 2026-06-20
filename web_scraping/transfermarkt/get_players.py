@@ -4,6 +4,7 @@ import get_machine_headers
 import json
 import pymongo
 import os
+import time
 from dotenv import load_dotenv
 
 import transfer_history, market_value_history, player_details, player_gallery
@@ -25,6 +26,8 @@ print(f"Password: {password}")
 print(myclient.list_database_names())
 
 mydb = myclient["football-mercato"]
+
+mycol = mydb["serie-a-players-list"]
 
 headers = get_machine_headers.get_machine_headers()
 
@@ -56,9 +59,15 @@ with open("serie-a-list-of-clubs.json", "r") as f:
             else:
                 continue
 
+        time.sleep(1)
+
+    time.sleep(1) 
+
     for player in players:
         basic_details = player_details.get_player_details(player["player_id"], player["player_name"], headers)
         rumours = player_details.get_rumours(player["player_id"], headers)
+
+
         # transfer_hisotry_details = transfer_history.get_transfer_history(player["player_id"], headers)
         # market_value_history_details = market_value_history.fetch_market_value_history(player["player_id"], headers)
         # gallery_images = player_gallery.get_player_gallery(player["player_id"], headers)
@@ -71,10 +80,17 @@ with open("serie-a-list-of-clubs.json", "r") as f:
         #     "gallery_images": gallery_images
         # }
 
+
         player_object = {
             "basic_details": basic_details,
             "rumours": rumours,
         }
 
-        x = mycol.insert_one(player_object)
-        print(f"the player with id {x.inserted_id} was inserted")
+        if (mycol.find_one({"basic_details.player_name": player_object["basic_details"]["player_name"]})):
+            print(f"the player with id {player['player_id']} already exists in the database")
+            continue
+        else:
+            x = mycol.insert_one(player_object)
+            print(f"the player with id {x.inserted_id} was inserted")
+
+        time.sleep(5)

@@ -1,0 +1,11 @@
+bs4
+json
+requests
+requests
+os
+sys
+fastapi
+openai
+newsapi-python
+pymongo
+dotenv

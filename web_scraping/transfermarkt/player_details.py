@@ -209,7 +209,7 @@ def get_rumours(player_id, headers):
     url = f"https://www.transfermarkt.com/ceapi/currentRumors/player/{player_id}/"
 
     try:
-        data = requests.get(url, headers=headers, timeout=10).json()
+        data = requests.get(url, headers=headers, timeout=20).json()
     except Exception as e:
         print("Rumor error:", e)
         return []

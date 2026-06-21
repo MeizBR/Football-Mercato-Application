@@ -5,16 +5,29 @@ import pymongo
 import os
 import time
 
-host = os.environ.get("MONGODB_HOST")
-database = os.environ.get("MONGODB_DATABASE")
-user = os.environ.get("MONGODB_USER")
-password = os.environ.get("MONGODB_PASSWORD")
+from dotenv import load_dotenv
+
+load_dotenv()
+
+import get_machine_headers
+
+# host = os.environ.get("MONGODB_HOST")
+# database = os.environ.get("MONGODB_DATABASE")
+# user = os.environ.get("MONGODB_USER")
+# password = os.environ.get("MONGODB_PASSWORD")
+
+host = os.getenv("MONGODB_HOST")
+database = os.getenv("MONGODB_DATABASE")
+user = os.getenv("MONGODB_USER")
+password = os.getenv("MONGODB_PASSWORD")
 
 myclient = pymongo.MongoClient(f"mongodb+srv://{user}:{password}@{host}")
 
 mydb = myclient["football-mercato"]
 
 mycol = mydb["transfermarkt-rumours-news"]
+
+headers = get_machine_headers.get_machine_headers()
 
 player_names = []
 club_names = []
@@ -100,18 +113,18 @@ def get_rumours_function(headers, index):
         # print(rumours_list [:2])
     return rumours_list, logs
 
-# print(get_rumours_function(headers, 1))
-if __name__ == "__main__":
-    headers = {
-        "User-Agent": "Mozilla/5.0"
-    }
+print(get_rumours_function(headers, 50))
+# if __name__ == "__main__":
+#     headers = {
+#         "User-Agent": "Mozilla/5.0"
+#     }
 
-    rumours_data, logs = get_rumours_function(headers, 2)
+#     rumours_data, logs = get_rumours_function(headers, 50)
 
-    print("Transfer news table:\n")
-    for item in rumours_data:
-        print(item)
+#     print("Transfer news table:\n")
+#     for item in rumours_data:
+#         print(item)
 
-    print("\nLogs:\n")
-    for log in logs:
-        print(log)
+#     print("\nLogs:\n")
+#     for log in logs:
+#         print(log)

@@ -15,7 +15,7 @@ function TransferCard({ transfer }) {
   return (
     <div className="transfer-card">
       <div className="card-image">
-        <img src="/images/transfer.png" alt={transfer.Title} width={330} height={200}/>
+        <img src="/images/mercato_bk.jpg" alt={transfer.Title} style={{width: "100%", height: "auto"}}/>
       </div>
       <hr />
       <div className="card-content">

@@ -23,7 +23,7 @@ print(f"Database: {database}")
 print(f"User: {user}")
 print(f"Password: {password}")
 
-print(myclient.list_database_names())
+print("database names:", myclient.list_database_names())
 
 mydb = myclient["football-mercato"]
 

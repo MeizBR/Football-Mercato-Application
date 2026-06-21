@@ -10,12 +10,12 @@ function Header() {
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse">
+          <div className="navbar-collapse">
             <span className="navbar-text playwrite-nz-basic">
               Instant Football News, Transfers, and Updates at Your Fingertips
             </span>
           </div>
-          <div className="collapse navbar-collapse" id="navbar-logos">
+          <div className="navbar-collapse" id="navbar-logos">
             <img src="/images/tunisia-flag.png" alt="Logo" width={40} height={40} style={{marginRight: "15px"}}/>
             <img src="/images/7.png" alt="Logo" width={40} height={40} style={{marginRight: "15px"}}/>
             <img src="/images/10.png" alt="Logo" width={40} height={40} style={{marginRight: "15px"}}/>

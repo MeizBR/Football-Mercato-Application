@@ -1,0 +1,22 @@
+Football-Mercato-Application/
+│
+├── 🐍 web_scraping/ (Python Data Engine)
+│   ├── ai_agents/         ──► Enriches stories, classifies & summarizes
+│   ├── football_api/      ──► Ingests structured sports API feeds
+│   ├── news_api/          ──► Collects general news coverage
+│   └── transfermarkt/     ──► Scrapes Tuttomercato & live transfer data
+│            │
+│            └───────────────► Interacts with MongoDB & FastAPI (Uvicorn)
+│
+├── 🟢 backend/ (Node.js/Express API)
+│   ├── routes / controllers──► Serves REST API endpoints to frontend
+│   └── models (Mongoose)   ──► Connects to MongoDB collections
+│
+├── ⚛️ src/ (React Application)
+│   ├── components/        ──► Custom UI widgets & rumour components
+│   ├── pages/             ──► Application views and dashboards
+│   └── services/          ──► Axios/Fetch layer targeting APIs
+│
+└── 🐳 Docker Infrastructure (Container Layer)
+    ├── Dockerfile          ──► Containerizes Python automation service
+    └── docker-compose.yml  ──► Orchestrates React, Node, Python, & MongoDB

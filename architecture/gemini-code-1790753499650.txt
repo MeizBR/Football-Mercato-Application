@@ -1,0 +1,33 @@
+┌─────────────────────────────────────────────────┐
+               │          CURRENT SCOPE (FOUNDATION)             │
+               │  • Web scraping & API Ingestion                 │
+               │  • Regex filtering & basic Mongo storage         │
+               │  • FastAPI / Uvicorn + Express APIs             │
+               │  • React Frontend interface                     │
+               └────────────────────────┬────────────────────────┘
+                                        │
+                                        ▼
+               ┌─────────────────────────────────────────────────┐
+               │          PHASE 1: AUTOMATION & AI                │
+               │  • n8n workflow integration & scheduling        │
+               │  • Deduplication via source fingerprinting      │
+               │  • AI classification (Rumours vs. Confirmed)    │
+               │  • Automated entity extraction & summaries       │
+               └────────────────────────┬────────────────────────┘
+                                        │
+                                        ▼
+               ┌─────────────────────────────────────────────────┐
+               │          PHASE 2: DEVOPS CONTAINERIZATION        │
+               │  • Dockerizing Python & Node services           │
+               │  • Multi-container Docker Compose setup         │
+               │  • Persistent database volumes & health checks   │
+               │  • Automated CI/CD pipeline deployment          │
+               └────────────────────────┬────────────────────────┘
+                                        │
+                                        ▼
+               ┌─────────────────────────────────────────────────┐
+               │          PHASE 3: MULTI-CHANNEL PLATFORM        │
+               │  • Player & Club specialized timelines           │
+               │  • Source reliability & trust scoring           │
+               │  • Automated Telegram & Social Media publishing  │
+               └─────────────────────────────────────────────────┘

@@ -1,0 +1,40 @@
+┌──────────────────────────────────────────────┐
+                        │                 DATA SOURCES                 │
+                        │  Football APIs  │ News APIs │ Transfermarkt  │
+                        │  Tuttomercato   │ Future AI Scraped Feeds    │
+                        └──────────────────────┬───────────────────────┘
+                                               │
+                                               ▼
+                        ┌──────────────────────────────────────────────┐
+                        │             PYTHON DATA SERVICES             │
+                        │  Web Scrapers   │ API Ingestion Engine       │
+                        │  Uvicorn Server │ FastAPI REST Endpoints     │
+                        └──────────────────────┬───────────────────────┘
+                                               │
+                                               ▼
+                        ┌──────────────────────────────────────────────┐
+                        │        DATA PROCESSING & AI LAYER            │
+                        │  Regex Filter   │ Timestamp & Deduplication │
+                        │  AI Agents      │ Entity Extraction/Summary  │
+                        └──────────────────────┬───────────────────────┘
+                                               │
+                                               ▼
+                        ┌──────────────────────────────────────────────┐
+                        │              MONGODB STORAGE                 │
+                        │  news-api-results  │ tuttomercato-news       │
+                        │  *-players-list    │ processed-transfers     │
+                        └──────────────┬───────────────┬───────────────┘
+                                       │               │
+                                       ▼               ▼
+                        ┌──────────────────┐   ┌──────────────────┐
+                        │ Node.js/Express  │   │   Python API     │
+                        │ Backend Services │   │ FastAPI / Uvicorn│
+                        └────────┬─────────┘   └────────┬─────────┘
+                                 │                      │
+                                 └───────────┬──────────┘
+                                             │
+                                             ▼
+                        ┌──────────────────────────────────────────────┐
+                        │               REACT FRONTEND                 │
+                        │  Pages │ Rumour Components │ API Services    │
+                        └──────────────────────────────────────────────┘

@@ -1,0 +1,25 @@
+[ SOURCE DATA ] ────────► Raw Scraped HTML / External JSON Response
+                                     │
+                                     ▼
+  [ INGESTION ]   ────────► Python Automated Collection Scripts
+                                     │
+                                     ▼
+  [ FILTERING ]   ────────► Time-Based Age Check & Regex Pattern Match
+                                     │
+                                     ▼
+  [ DEDUPLICATION]────────► Fingerprint Hash: (Source + URL + Title + Date)
+                                     │
+                                     ▼
+  [ AI ENRICHMENT]────────► LLM Entity Extraction & Classification
+                            ├── Classify: Rumour / Confirmed / Contract
+                            ├── Extract: Player, Origin Club, Target Club
+                            └── Summarize: Concise Transfer Update
+                                     │
+                                     ▼
+  [ PERSISTENCE ] ────────► Store Structured JSON in MongoDB Collections
+                                     │
+                                     ▼
+  [ CONSUMPTION ] ────────► Express / FastAPI REST API Service
+                                     │
+                                     ▼
+  [ PRESENTATION ]────────► React UI Dashboard Rendering

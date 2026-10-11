@@ -21,18 +21,18 @@ app = FastAPI()
 def get_player(player_id: int, player_name: str):
     return {
         "player": {
-            # "id": player_details.get_player_details(player_id, player_name, headers)["player_name"],
             "name": player_details.get_player_details(player_id, player_name, headers)["player_name"],
             "number": player_details.get_player_details(player_id, player_name, headers)["player_number"],
             "market_value": player_details.get_player_details(player_id, player_name, headers)["player_market_value"].split(' ')[0],
-            # "market_value_last_update": player_details.get_player_details(player_id, player_name, headers)["player_market_value"].split(' ')[-1],
+            "market_value_last_update": player_details.get_player_details(player_id, player_name, headers)["player_market_value"].split(' ')[-1],
             "international_squad": player_details.get_player_details(player_id, player_name, headers)["player_international_squad"],
-            # "birthplace": player_details.get_player_details(player_id, player_name, headers)["player_birthplace"],
-            # "agent": player_details.get_player_details(player_id, player_name, headers)["player_agent"],
-            # "height": player_details.get_player_details(player_id, player_name, headers)["player_height"],
-            # "citizenship": player_details.get_player_details(player_id, player_name, headers)["player_citizenship"],
+            "birthplace": player_details.get_player_details(player_id, player_name, headers)["player_birthplace"],
+            "agent": player_details.get_player_details(player_id, player_name, headers)["player_agent"],
+            "height": player_details.get_player_details(player_id, player_name, headers)["player_height"],
+            "citizenship": player_details.get_player_details(player_id, player_name, headers)["player_citizenship"],
             "position": player_details.get_player_details(player_id, player_name, headers)["player_position"],
             "image_url": player_details.get_player_details(player_id, player_name, headers)["player_image_url"],
+            "further_information": player_details.get_player_details(player_id, player_name, headers)["player_further_information"],
         },
     }
 
@@ -43,7 +43,7 @@ def get_player(player_id: int, player_name: str):
             "club": player_details.get_player_club_details(player_id, player_name, headers)["player_club"],
             "league": player_details.get_player_club_details(player_id, player_name, headers)["club_league"],
             "club_league_level": player_details.get_player_club_details(player_id, player_name, headers)["player_club_league_level"].strip(),
-            "club_image_url": f"https://tmssl.akamaized.net//images/wappen/head/{player_details.get_player_club_details(player_id, player_name, headers)['club_id']}.png",
+            "club_image_url": player_details.get_player_club_details(player_id, player_name, headers)['club_id'],
             "joined_date": player_details.get_player_club_details(player_id, player_name, headers)["player_joined_date"],
             "contract_expiry": player_details.get_player_club_details(player_id, player_name, headers)["player_contract_expiry"],
         },

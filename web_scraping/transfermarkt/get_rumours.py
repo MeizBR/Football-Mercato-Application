@@ -111,20 +111,21 @@ def get_rumours_function(headers, index):
             logs.append(x.inserted_id)
 
         # print(rumours_list [:2])
-    return rumours_list, logs
+    return [rumours_list, logs]
+    # return rumours_list
 
-print(get_rumours_function(headers, 50))
-# if __name__ == "__main__":
-#     headers = {
-#         "User-Agent": "Mozilla/5.0"
-#     }
+# print(get_rumours_function(headers, 50))
+if __name__ == "__main__":
+    headers = {
+        "User-Agent": "Mozilla/5.0"
+    }
 
-#     rumours_data, logs = get_rumours_function(headers, 50)
+    rumours_data, logs = get_rumours_function(headers, 50)
 
-#     print("Transfer news table:\n")
-#     for item in rumours_data:
-#         print(item)
+    print("Transfer news table:\n")
+    for item in rumours_data:
+        print(item)
 
-#     print("\nLogs:\n")
-#     for log in logs:
-#         print(log)
+    print("\nLogs:\n")
+    for log in logs:
+        print(log)

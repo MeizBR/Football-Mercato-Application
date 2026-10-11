@@ -49,23 +49,23 @@ def get_player_details(player_id, player_name, headers):
         "h1.data-header__headline-wrapper"
     )
 
-    # player_number = safe_select_text(
-    #     soup,
-    #     'span.data-header__shirt-number'
-    # )
+    player_number = safe_select_text(
+        soup,
+        'span.data-header__shirt-number'
+    )
 
-    # if player_number:
-    #     player_number = player_number.replace("#", "")
+    if player_number:
+        player_number = player_number.replace("#", "")
 
     player_market_value = safe_select_text(
         soup,
         'a.data-header__market-value-wrapper'
     )
 
-    player_club = safe_select_text(
-        soup,
-        'span.data-header__club'
-    )
+    # player_club = safe_select_text(
+    #     soup,
+    #     'span.data-header__club'
+    # )
 
     # club_league = safe_select_text(
     #     soup,
@@ -77,10 +77,10 @@ def get_player_details(player_id, player_name, headers):
     #     page_text
     # )
 
-    # player_international_squad = safe_regex(
-    #     r"Current international:.*?([A-Za-z].*?)\n",
-    #     page_text
-    # )
+    player_international_squad = safe_regex(
+        r"Current international:.*?([A-Za-z].*?)\n",
+        page_text
+    )
 
     # player_birthplace = safe_regex(
     #     r"Place of birth:.*?([A-Za-z].*?) ",
@@ -143,7 +143,8 @@ def get_player_details(player_id, player_name, headers):
 
     player_details = {
         "player_name": player_name,
-        "player_club": player_club,
+        "player_number": player_number,
+        "player_international_squad": player_international_squad,
         "player_market_value": player_market_value,
         "player_position": player_position,
         "player_image_url": player_image_url

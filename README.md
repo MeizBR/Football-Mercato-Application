@@ -1,3 +1,9 @@
+# Note: before starting the project you need to set these environment variables so Uvicorn won't hang up or break like I encountered myself !
+MONGODB_HOST=xxxx
+MONGODB_DATABASE=xxxx
+MONGODB_USER=xxxx
+MONGODB_PASSWORD=xxxx
+
 # ⚽ Football Mercato Application
 
 > A full-stack football transfer intelligence application that collects, processes, stores, and presents football transfer news and rumours from multiple sources.

@@ -3,8 +3,8 @@ from fastapi import FastAPI
 import market_value_history
 import transfer_history
 import player_gallery
-import get_machine_headers
 import get_rumours
+import get_machine_headers
 
 import player_details
 
@@ -21,16 +21,16 @@ app = FastAPI()
 def get_player(player_id: int, player_name: str):
     return {
         "player": {
-            "id": player_details.get_player_details(player_id, player_name, headers)["player_name"],
+            # "id": player_details.get_player_details(player_id, player_name, headers)["player_name"],
             "name": player_details.get_player_details(player_id, player_name, headers)["player_name"],
             "number": player_details.get_player_details(player_id, player_name, headers)["player_number"],
             "market_value": player_details.get_player_details(player_id, player_name, headers)["player_market_value"].split(' ')[0],
-            "market_value_last_update": player_details.get_player_details(player_id, player_name, headers)["player_market_value"].split(' ')[-1],
+            # "market_value_last_update": player_details.get_player_details(player_id, player_name, headers)["player_market_value"].split(' ')[-1],
             "international_squad": player_details.get_player_details(player_id, player_name, headers)["player_international_squad"],
-            "birthplace": player_details.get_player_details(player_id, player_name, headers)["player_birthplace"],
-            "agent": player_details.get_player_details(player_id, player_name, headers)["player_agent"],
-            "height": player_details.get_player_details(player_id, player_name, headers)["player_height"],
-            "citizenship": player_details.get_player_details(player_id, player_name, headers)["player_citizenship"],
+            # "birthplace": player_details.get_player_details(player_id, player_name, headers)["player_birthplace"],
+            # "agent": player_details.get_player_details(player_id, player_name, headers)["player_agent"],
+            # "height": player_details.get_player_details(player_id, player_name, headers)["player_height"],
+            # "citizenship": player_details.get_player_details(player_id, player_name, headers)["player_citizenship"],
             "position": player_details.get_player_details(player_id, player_name, headers)["player_position"],
             "image_url": player_details.get_player_details(player_id, player_name, headers)["player_image_url"],
         },
@@ -130,6 +130,8 @@ def get_player(player_id: int):
 def rumours(index: int):
     rumours = get_rumours.get_rumours_function(headers, index)
 
+    rumours_list = rumours[0]
+
     return {
         "rumours": {
                 f"rumour_{i+1}": {
@@ -139,7 +141,7 @@ def rumours(index: int):
                     "joining_destination": rumour["joining_destination"],
                     "departure_club": rumour["departure_club"],
                     "arrival_club": rumour["arrival_club"]
-                } for i, rumour in enumerate(rumours)
+                } for i, rumour in enumerate(rumours_list)
         },
     }
 

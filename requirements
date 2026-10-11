@@ -1,9 +1,5 @@
 bs4
-json
-requests
-requests
-os
-sys
+uvicorn
 fastapi
 openai
 newsapi-python

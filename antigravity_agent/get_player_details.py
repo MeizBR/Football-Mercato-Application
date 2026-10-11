@@ -9,7 +9,7 @@ response = requests.get(url, headers=headers)
 
 # Check HTTP Status Code
 if response.status_code == 200:
-    data = response.json()  # Automatically parses JSON response into a Python dict
+    data = response.json()
     print("Data received:", data)
 else:
     print(f"Request failed with status code: {response.status_code}")

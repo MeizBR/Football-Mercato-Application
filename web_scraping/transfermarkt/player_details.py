@@ -15,6 +15,9 @@ def safe_select_attr(soup, selector, attr):
     el = soup.select_one(selector)
     return el[attr] if el and el.has_attr(attr) else None
 
+def safe_select_attr_all(soup, selector, attr):
+    els = soup.select(selector)
+    return [el[attr] for el in els if el.has_attr(attr)] if els else None
 
 def safe_regex(pattern, text):
     m = re.search(pattern, text, re.DOTALL)
@@ -201,23 +204,22 @@ def get_player_club_details(player_id, player_name, headers):
 
 def get_rumours(player_id, headers):
 
-    url = f"https://www.transfermarkt.com/ceapi/currentRumors/player/{player_id}/"
+    url = f"https://www.transfermarkt.com/adam-wharton/geruechte/spieler/{player_id}/"
 
     try:
-        data = requests.get(url, headers=headers, timeout=20).json()
+        response = requests.get(url, headers=headers, timeout=10)
+        response.raise_for_status()
     except Exception as e:
-        print("Rumor error:", e)
-        return []
+        print("Request error:", e)
+        return None
 
     rumours = []
 
-    for rumor in data.get("rumors", []):
+    soup = BeautifulSoup(response.content, "html.parser")
+    page_text = soup.text   
 
-        club = rumor.get("club", {})
-
-        rumours.append({
-            "club": club.get("name"),
-            "competition": club.get("competitionName")
-        })
+    for rumour in safe_select_attr_all(soup, "td.zentriert a", "title"):
+        if rumour and len(rumour.split(" ")) < 4:
+            rumours.append(rumour)
 
     return rumours

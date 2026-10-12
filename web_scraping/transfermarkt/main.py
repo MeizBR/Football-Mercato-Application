@@ -49,23 +49,10 @@ def get_player(player_id: int, player_name: str):
         },
     }
 
-@app.get("/player/{player_name}/{player_id}/furtherInformation")
-def get_player(player_id: int, player_name: str):
-    return {
-        "further_information": {
-                f"information {i+1}": player_details.get_player_details(player_id, player_name, headers)["player_further_information"][i] for i in range(len(player_details.get_player_details(player_id, player_name, headers)["player_further_information"]) - 1)
-        },
-    }
-
 @app.get("/player/{player_id}/transferRumours")
 def get_player(player_id: int):
     return {
-        "rumours": {
-                f"rumour {i+1}": {
-                    "club": player_details.get_rumours(player_id, headers)[i]["club"],
-                    "competition": player_details.get_rumours(player_id, headers)[i]["competition"]
-                } for i in range(len(player_details.get_rumours(player_id, headers)))
-        },
+        player_details.get_rumours(player_id, headers)[i] for i in range(len(player_details.get_rumours(player_id, headers)))
     }
 
 @app.get("/player/{player_id}/marketValueHistory")
@@ -140,7 +127,9 @@ def rumours(index: int):
                     "market_value": rumour["market_value"],
                     "joining_destination": rumour["joining_destination"],
                     "departure_club": rumour["departure_club"],
-                    "arrival_club": rumour["arrival_club"]
+                    "arrival_club": rumour["arrival_club"],
+                    "score": rumour["score"],
+                    "score_link_details": rumour["score_link_details"]
                 } for i, rumour in enumerate(rumours_list)
         },
     }

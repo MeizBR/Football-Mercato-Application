@@ -4,6 +4,8 @@ import re
 import pymongo
 import os
 import time
+from pathlib import Path
+from datetime import date
 
 from dotenv import load_dotenv
 
@@ -29,6 +31,10 @@ mycol = mydb["transfermarkt-rumours-news"]
 
 headers = get_machine_headers.get_machine_headers()
 
+current_dir = Path.home() / "Desktop" / "Football-Mercato-Application"
+
+today = date.today()
+
 player_names = []
 club_names = []
 player_market_values = []
@@ -36,7 +42,17 @@ player_joining_destinations = []
 player_departure_clubs = []
 tmp = []
 rumours_list = []
+scores = []
+score_link_details = []
 logs = []
+
+def save_html_rumours_details(url, filename):
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        with open(current_dir / "rumours_details" / filename, "w", encoding="utf-8") as f:
+            f.write(response.text)
+    else:
+        f.write("<h1>Failed to retrieve the page</h1>")
 
 def get_rumours_function(headers, index):
     mycol.delete_many({})
@@ -97,24 +113,45 @@ def get_rumours_function(headers, index):
 
         # print(tmp)
 
-        for i,j,k,l,m in zip(player_names, club_names, player_market_values, player_joining_destinations, tmp):
+        for score in soup.select('div.geruecht-zahl'):
+            if score:
+                scores.append(score.text.strip() + " %")
+            else:
+                scores.append("0 %")
+
+        for i, score_link_detail in enumerate(soup.select('a.link-zur-gk')):
+            if score_link_detail:
+                link = "https://www.transfermarkt.com" + score_link_detail.get("href", "").strip()
+                score_link_details.append(link)
+                
+                # Optional safety check: ensure player_names has enough entries
+                if i < len(player_names):
+                    player_name = player_names[i].replace(' ', '_').lower()
+                else:
+                    player_name = f"unknown_player_{i}"
+
+                save_html_rumours_details(link, f"{player_name}_rumour_{today}_details.html")
+            else:
+                score_link_details.append("No details available.")
+
+        for i,j,k,l,m,n,o in zip(player_names, club_names, player_market_values, player_joining_destinations, tmp, scores, score_link_details):
             d = {
                     "player_name": i,
                     "current_club": j,
                     "market_value": k,
                     "joining_destination": l,
                     "departure_club": m["from"],
-                    "arrival_club": m["to"]
+                    "arrival_club": m["to"],
+                    "score": n,
+                    "score_link_details": o
                 }
             rumours_list.append(d)
-            x = mycol.insert_one(d)
-            logs.append(x.inserted_id)
+            # x = mycol.insert_one(d)
+            # logs.append(x.inserted_id)
 
-        # print(rumours_list [:2])
     return [rumours_list, logs]
-    # return rumours_list
 
-# print(get_rumours_function(headers, 50))
+
 if __name__ == "__main__":
     headers = {
         "User-Agent": "Mozilla/5.0"

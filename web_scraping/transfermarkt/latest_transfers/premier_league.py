@@ -117,17 +117,17 @@ def get_premier_league_transfers(headers):
 
     return premier_league_transfers, logs
 
-# if __name__ == "__main__":
-#     headers = {
-#         "User-Agent": "Mozilla/5.0"
-#     }
+if __name__ == "__main__":
+    headers = {
+        "User-Agent": "Mozilla/5.0"
+    }
 
-#     transfer_data, logs = get_premier_league_transfers(headers)
+    transfer_data, logs = get_premier_league_transfers(headers)
 
-#     print("Transfer news table:\n")
-#     for item in transfer_data:
-#         print(item)
+    print("Transfer news table:\n")
+    for item in transfer_data:
+        print(item)
 
-#     print("\nLogs:\n")
-#     for log in logs:
-#         print(log)
+    print("\nLogs:\n")
+    for log in logs:
+        print(log)

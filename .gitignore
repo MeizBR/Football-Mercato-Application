@@ -64,3 +64,4 @@ coverage/
 # Optional: Docker
 # ========================
 docker-compose.override.yml
+rumours_details

@@ -4,6 +4,7 @@ import market_value_history
 import transfer_history
 import player_gallery
 import get_rumours
+import get_top_transfers
 import get_machine_headers
 
 import player_details
@@ -132,6 +133,22 @@ def rumours(index: int):
                     "score_link_details": rumour["score_link_details"]
                 } for i, rumour in enumerate(rumours_list)
         },
+    }
+
+@app.get("/topTransfers")
+def top_transfers():
+    transfers = get_top_transfers.get_top_transfers_function(headers)
+
+    return {
+        "topTransfers": {
+            f"transfer_{i+1}": {
+                "player_name": transfer["player_name"],
+                "market_value": transfer["market_value"],
+                "fees": transfer["fees"],
+                "current_club": transfer["current_club"]
+            }
+            for i, transfer in enumerate(transfers)
+        }
     }
 
 # Latest Premier League Transfers

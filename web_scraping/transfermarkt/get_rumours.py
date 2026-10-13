@@ -151,7 +151,6 @@ def get_rumours_function(headers, index):
 
     return [rumours_list, logs]
 
-
 if __name__ == "__main__":
     headers = {
         "User-Agent": "Mozilla/5.0"

@@ -146,8 +146,8 @@ def get_rumours_function(headers, index):
                     "score_link_details": o
                 }
             rumours_list.append(d)
-            # x = mycol.insert_one(d)
-            # logs.append(x.inserted_id)
+            x = mycol.insert_one(d)
+            logs.append(x.inserted_id)
 
     return [rumours_list, logs]
 

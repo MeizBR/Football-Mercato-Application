@@ -87,10 +87,10 @@ if __name__ == "__main__":
         "User-Agent": "Mozilla/5.0"
     }
 
-    rumours_data, logs = get_rumours_function(headers, 50)
+    top_transfers_data = get_top_transfers_function(headers=headers)
 
     print("Transfer news table:\n")
-    for item in rumours_data:
+    for item in top_transfers_data:
         print(item)
 
     print("\nLogs:\n")

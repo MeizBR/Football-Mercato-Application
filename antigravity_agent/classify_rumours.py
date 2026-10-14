@@ -1,39 +1,28 @@
 from google import genai
 import os
+import pymongo
 import requests
 import tarfile
 import shutil
-from datetime import date
 from pathlib import Path
-# from dotenv import load_dotenv
 
-# load_dotenv()
 client = genai.Client()
 
-# today = date.today()
+host = os.getenv("MONGODB_HOST")
+database = os.getenv("MONGODB_DATABASE")
+user = os.getenv("MONGODB_USER")
+password = os.getenv("MONGODB_PASSWORD")
 
-# MAX_TOKENS = 6000
+myclient = pymongo.MongoClient(f"mongodb+srv://{user}:{password}@{host}")
 
-# team_name = "Player_stats"
+mydb = myclient["football-mercato"]
 
-rumours_data = {
-    "rumour_1": {
-      "player_name": "Marcel Regula",
-      "current_club": "Zaglebie Lubin",
-      "market_value": "7.00m",
-      "joining_destination": "Joining Borussia Dortmund?",
-      "departure_club": {
-        "club_name": "Zaglebie Lubin",
-        "club_image_url": "https://img.a.transfermarkt.technology/wappen/medium/168.png?lm=1789459176"
-      },
-      "arrival_club": {
-        "club_name": "Borussia Dortmund",
-        "club_image_url": "https://img.a.transfermarkt.technology/wappen/medium/16.png?lm=1789459167"
-      },
-      "score": "49 %",
-      "score_link_details": "https://www.transfermarkt.com/wechselt-marcel-regula-zu-borussia-dortmund-/thread/forum/154/thread_id/1202761"
-    }
-}
+mycol = mydb["transfermarkt-rumours-news"]
+
+rumours_data = []
+
+for x in mycol.find():
+  rumours_data.append(x)
 
 interaction = client.interactions.create(
     agent="antigravity-preview-09-2026",
@@ -108,7 +97,7 @@ print("Usage:", interaction.usage)
 print(f"Output\n: {interaction.output_text}")
 
 
-target_file_name = f"rumours_data.html"
+target_file_name = "rumours_data.html"
 
 env_id = interaction.environment_id
 api_key = os.environ["GEMINI_API_KEY"]

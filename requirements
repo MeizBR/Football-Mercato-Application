@@ -5,3 +5,4 @@ openai
 newsapi-python
 pymongo
 dotenv
+ollama

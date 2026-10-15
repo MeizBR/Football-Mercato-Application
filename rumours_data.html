@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Football Transfer Intelligence & Credibility Report</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #1e293b;
+            --bg-card-subtle: #24344d;
+            --border-color: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-blue: #38bdf8;
+            --accent-green: #22c55e;
+            --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-purple: #a855f7;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-stack);
+            line-height: 1.6;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 800px;
+        }
+
+        .meta-pill {
+            background: #0f172a;
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.825rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .stat-card {
+            background: var(--bg-card-subtle);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .table-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+            overflow-x: auto;
+        }
+
+        .table-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        th {
+            background: var(--bg-card-subtle);
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding: 12px 14px;
+            border-bottom: 2px solid var(--border-color);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .table-club-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .club-crest {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+        }
+
+        .crest-placeholder {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--border-color);
+            border-radius: 50%;
+            font-size: 14px;
+        }
+
+        .cards-section {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .rumour-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .rumour-card:hover {
+            border-color: #475569;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .player-meta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .rumour-id {
+            background: #0f172a;
+            color: var(--accent-blue);
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .player-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .market-value-badge {
+            background: #1e3a8a;
+            color: #93c5fd;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: 1px solid #2563eb;
+        }
+
+        .card-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .status-success {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid #16a34a;
+        }
+
+        .status-partial {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid #d97706;
+        }
+
+        .status-failed {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            border: 1px solid #dc2626;
+        }
+
+        .badge-high {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid #0284c7;
+        }
+
+        .badge-moderate {
+            background: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+            border: 1px solid #b45309;
+        }
+
+        .badge-low {
+            background: rgba(148, 163, 184, 0.15);
+            color: #cbd5e1;
+            border: 1px solid #64748b;
+        }
+
+        .badge-inconclusive {
+            background: rgba(239, 68, 68, 0.15);
+            color: #fca5a5;
+            border: 1px solid #ef4444;
+        }
+
+        .clubs-matchup {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-card-subtle);
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .club-side {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .club-side.arrival {
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        .club-side.arrival .club-crest {
+            order: 2;
+        }
+
+        .club-label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .club-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .transfer-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            padding: 0 16px;
+        }
+
+        .rumour-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .metric-box {
+            background: #111a2c;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .metric-label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 4px 0;
+        }
+
+        .metric-value.tm-score {
+            color: var(--accent-amber);
+        }
+
+        .tm-score-pill {
+            font-weight: 700;
+            color: var(--accent-amber);
+            background: rgba(245, 158, 11, 0.15);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .metric-subtext {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .btn-thread {
+            display: inline-block;
+            background: #2563eb;
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.825rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.15s ease;
+        }
+
+        .btn-thread:hover {
+            background: #1d4ed8;
+        }
+
+        .assessment-section {
+            background: #162032;
+            border: 1px solid #2d3b55;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .assessment-explanation {
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .evidence-grid {
+                grid-template-columns: 1fr;
+            }
+            .club-side.arrival {
+                justify-content: flex-start;
+                text-align: left;
+            }
+            .club-side.arrival .club-crest {
+                order: 0;
+            }
+        }
+
+        .evidence-box {
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .evidence-box.supporting {
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .evidence-box.contradicting {
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .evidence-box h5, .missing-info-box h5, .sources-box h5 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 10px;
+        }
+
+        .evidence-box.supporting h5 {
+            color: #4ade80;
+        }
+
+        .evidence-box.contradicting h5 {
+            color: #f87171;
+        }
+
+        .evidence-box ul, .missing-info-box ul {
+            padding-left: 18px;
+            font-size: 0.875rem;
+            color: #cbd5e1;
+        }
+
+        .evidence-box li, .missing-info-box li {
+            margin-bottom: 6px;
+        }
+
+        .missing-info-box {
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-amber);
+            margin-bottom: 16px;
+        }
+
+        .missing-info-box h5 {
+            color: #fbbf24;
+        }
+
+        .sources-box {
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 14px 18px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sources-box h5 {
+            color: var(--accent-blue);
+            margin-bottom: 6px;
+        }
+
+        .sources-links {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .source-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .source-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.825rem;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div>
+                    <h1>Football Transfer Intelligence Report</h1>
+                    <p class="subtitle">Evidence-based AI credibility evaluations, live forum detail scraping, and deep transfer timeline analysis.</p>
+                </div>
+                <div class="meta-pill">Generated: 2026-10-15 12:02:56 UTC</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Total Rumours</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" style="color: var(--accent-green);">6</span>
+                    <span class="stat-label">Successfully Analyzed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" style="color: var(--accent-blue);">3</span>
+                    <span class="stat-label">High Credibility</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" style="color: var(--accent-amber);">2</span>
+                    <span class="stat-label">Moderate Credibility</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" style="color: var(--text-secondary);">2</span>
+                    <span class="stat-label">Low Credibility</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="table-section">
+            <h2 class="table-title">📋 Transfer Rumours Overview Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Player</th>
+                        <th>Departure Club</th>
+                        <th>Arrival Target</th>
+                        <th>Market Value</th>
+                        <th>TM Poll Score</th>
+                        <th>AI Credibility</th>
+                        <th>Status</th>
+                        <th>Thread Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td><strong>#1</strong></td>
+            <td><strong>Érik Lira</strong></td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/3711.png?lm=1789459359" alt="CD Cruz Azul crest" class="club-crest" loading="lazy" />
+                    <span>CD Cruz Azul</span>
+                </div>
+            </td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/1049.png?lm=1789459228" alt="Valencia CF crest" class="club-crest" loading="lazy" />
+                    <span>Valencia CF</span>
+                </div>
+            </td>
+            <td><span class="market-value-badge">€ 14.00m</span></td>
+            <td><span class="tm-score-pill">47 %</span></td>
+            <td><span class="badge badge-moderate">Moderate (Preliminary Intermediary Talks)</span></td>
+            <td><span class="badge status-success">Successfully analyzed</span></td>
+            <td><a href="https://www.transfermarkt.com/will-erik-lira-join-valencia-cf-/thread/forum/154/thread_id/1207376" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></td>
+        </tr>
+        
+
+        <tr>
+            <td><strong>#2</strong></td>
+            <td><strong>Marcel Regula</strong></td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/168.png?lm=1789459176" alt="Zaglebie Lubin crest" class="club-crest" loading="lazy" />
+                    <span>Zaglebie Lubin</span>
+                </div>
+            </td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/16.png?lm=1789459167" alt="Borussia Dortmund crest" class="club-crest" loading="lazy" />
+                    <span>Borussia Dortmund</span>
+                </div>
+            </td>
+            <td><span class="market-value-badge">€ 7.00m</span></td>
+            <td><span class="tm-score-pill">14 %</span></td>
+            <td><span class="badge badge-low">Low to Moderate (Routine Scouting / Low Imminence)</span></td>
+            <td><span class="badge status-success">Successfully analyzed</span></td>
+            <td><a href="https://www.transfermarkt.com/wechselt-marcel-regula-zu-borussia-dortmund-/thread/forum/154/thread_id/1202761" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></td>
+        </tr>
+        
+
+        <tr>
+            <td><strong>#3</strong></td>
+            <td><strong>Alex Scott</strong></td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/989.png?lm=1791205195" alt="AFC Bournemouth crest" class="club-crest" loading="lazy" />
+                    <span>AFC Bournemouth</span>
+                </div>
+            </td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/31.png?lm=1789459168" alt="Liverpool FC crest" class="club-crest" loading="lazy" />
+                    <span>Liverpool FC</span>
+                </div>
+            </td>
+            <td><span class="market-value-badge">€ 70.00m</span></td>
+            <td><span class="tm-score-pill">63 %</span></td>
+            <td><span class="badge badge-high">Moderate to High (Confirmed Interest / Steep Winter Valuation)</span></td>
+            <td><span class="badge status-success">Successfully analyzed</span></td>
+            <td><a href="https://www.transfermarkt.com/alex-scott-to-liverpool-fc-/thread/forum/154/thread_id/1207375" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></td>
+        </tr>
+        
+
+        <tr>
+            <td><strong>#4</strong></td>
+            <td><strong>Alex Scott</strong></td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/989.png?lm=1791205195" alt="AFC Bournemouth crest" class="club-crest" loading="lazy" />
+                    <span>AFC Bournemouth</span>
+                </div>
+            </td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/631.png?lm=1789459205" alt="Chelsea FC crest" class="club-crest" loading="lazy" />
+                    <span>Chelsea FC</span>
+                </div>
+            </td>
+            <td><span class="market-value-badge">€ 70.00m</span></td>
+            <td><span class="tm-score-pill">17 %</span></td>
+            <td><span class="badge badge-high">High (Chronologically Verified Bids &amp; Active Pursuit)</span></td>
+            <td><span class="badge status-success">Successfully analyzed</span></td>
+            <td><a href="https://www.transfermarkt.com/alex-scott-zu-fc-chelsea-/thread/forum/154/thread_id/1191027" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></td>
+        </tr>
+        
+
+        <tr>
+            <td><strong>#5</strong></td>
+            <td><strong>Kofi Amoako</strong></td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/41.png?lm=1789459168" alt="Hamburger SV crest" class="club-crest" loading="lazy" />
+                    <span>Hamburger SV</span>
+                </div>
+            </td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/42.png?lm=1789459168" alt="Hannover 96 crest" class="club-crest" loading="lazy" />
+                    <span>Hannover 96</span>
+                </div>
+            </td>
+            <td><span class="market-value-badge">€ 4.00m</span></td>
+            <td><span class="tm-score-pill">47 %</span></td>
+            <td><span class="badge badge-low">Low (Hypothetical Media Conception / Rendered Obsolete by Injury Crisis)</span></td>
+            <td><span class="badge status-success">Successfully analyzed</span></td>
+            <td><a href="https://www.transfermarkt.com/kofi-amoako-zu-hannover-96-/thread/forum/154/thread_id/1207339" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></td>
+        </tr>
+        
+
+        <tr>
+            <td><strong>#6</strong></td>
+            <td><strong>JJ Gabriel</strong></td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/5242.png?lm=1789459435" alt="Manchester United U18 crest" class="club-crest" loading="lazy" />
+                    <span>Manchester United U18</span>
+                </div>
+            </td>
+            <td>
+                <div class="table-club-cell">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/418.png?lm=1789459190" alt="Real Madrid crest" class="club-crest" loading="lazy" />
+                    <span>Real Madrid</span>
+                </div>
+            </td>
+            <td><span class="market-value-badge">€ -</span></td>
+            <td><span class="tm-score-pill">24 %</span></td>
+            <td><span class="badge badge-high">High (Direct Inter-Club Contacts Confirmed by Top Tier Sources)</span></td>
+            <td><span class="badge status-success">Successfully analyzed</span></td>
+            <td><a href="https://www.transfermarkt.com/jj-gabriel-to-real-madrid-/thread/forum/154/thread_id/1206996" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </section>
+
+        <section class="cards-section">
+            <h2 class="table-title" style="margin-bottom: 4px;">🔍 Detailed Rumour Investigations & Evidence Breakdown</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.9rem;">
+                Each rumour is scrutinized using data extracted from Transfermarkt forum detail pages, verified journalist publications, club financial contexts, and squad tactical requirements.
+            </p>
+            
+        <article class="rumour-card" id="rumour-1">
+            <div class="card-header">
+                <div class="player-meta">
+                    <span class="rumour-id">#1</span>
+                    <h3 class="player-name">Érik Lira</h3>
+                    <span class="market-value-badge">€ 14.00m</span>
+                </div>
+                <div class="card-badges">
+                    <span class="badge status-success">Successfully analyzed</span>
+                    <span class="badge badge-moderate">Moderate (Preliminary Intermediary Talks)</span>
+                </div>
+            </div>
+
+            <div class="clubs-matchup">
+                <div class="club-side departure">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/3711.png?lm=1789459359" alt="CD Cruz Azul crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Departure</span>
+                        <div class="club-title">CD Cruz Azul</div>
+                    </div>
+                </div>
+                <div class="transfer-arrow">➔</div>
+                <div class="club-side arrival">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/1049.png?lm=1789459228" alt="Valencia CF crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Target Destination</span>
+                        <div class="club-title">Valencia CF</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rumour-metrics">
+                <div class="metric-box">
+                    <span class="metric-label">Original TM Rumour Score</span>
+                    <span class="metric-value tm-score">47 %</span>
+                    <span class="metric-subtext">Community forum sentiment poll</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Detail Thread Posts</span>
+                    <span class="metric-value">1</span>
+                    <span class="metric-subtext">WILL ÉRIK LIRA JOIN VALENCIA CF?</span>
+                </div>
+                <div class="metric-box link-box">
+                    <span class="metric-label">Source Verification</span>
+                    <div style="margin-top: 6px;"><a href="https://www.transfermarkt.com/will-erik-lira-join-valencia-cf-/thread/forum/154/thread_id/1207376" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></div>
+                </div>
+            </div>
+
+            <div class="assessment-section">
+                <h4 class="section-title">🤖 AI Credibility Assessment & Detailed Breakdown</h4>
+                <p class="assessment-explanation">The rumour is anchored by an exclusive report from Spanish radio network Radio Marca (via &#x27;El Partit de l&#x27;Una&#x27;), reporting that Tarek Sebiat, the European director of Mexican agency STAYPRO (representing Érik Lira), met directly with Valencia CF sporting director Braulio. In addition, Mexican national team coach Javier Aguirre publicly highlighted his positive relationship with Lira. While the meeting establishes verified exploratory interest and intermediary contact, it represents an initial agency pitch rather than advanced club-to-club negotiations.</p>
+
+                <div class="evidence-grid">
+                    <div class="evidence-box supporting">
+                        <h5>✓ Supporting Evidence</h5>
+                        <ul><li>Documented direct meeting between player agency representative (STAYPRO / Tarek Sebiat) and Valencia sporting director Braulio.</li><li>Reported by Radio Marca Valencia, an established mainstream Spanish sports broadcaster with accredited club access.</li><li>Player fits Valencia&#x27;s tactical requirement for an aggressive defensive pivot.</li><li>Mexican national team manager Javier Aguirre publicly affirmed his familiarity and endorsement of the player.</li></ul>
+                    </div>
+                    <div class="evidence-box contradicting">
+                        <h5>⚠ Contradicting & Limiting Factors</h5>
+                        <ul><li>No formal transfer bid or official inquiry has been submitted by Valencia CF to CD Cruz Azul.</li><li>Érik Lira is under a long-term contract at Cruz Azul through June 30, 2029, with a €14.00m valuation.</li><li>Valencia operates under well-documented financial austerity under Peter Lim&#x27;s ownership, making an eight-figure outright purchase difficult without prior high-profile player sales.</li><li>Single initial media report without secondary corroboration from Mexican football authorities or independent Spanish dailies.</li></ul>
+                    </div>
+                </div>
+
+                <div class="missing-info-box">
+                    <h5>❓ Missing Information & Key Uncertainties</h5>
+                    <ul><li>Whether Valencia initiated the summit or if the agency was actively marketing the player to La Liga clubs.</li><li>Cruz Azul&#x27;s willingness to entertain European loan-to-buy structures or negotiate below their valuation.</li><li>Availability of non-EU registration slots within Valencia&#x27;s first-team squad.</li></ul>
+                </div>
+
+                <div class="sources-box">
+                    <h5>📚 Cited Sources & External Evidence:</h5>
+                    <div class="sources-links"><a href="https://x.com/Elpartitdelauna/status/2110324552165163382" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Radio Marca / El Partit de l&#x27;Una (X Post)</a> &bull; <a href="https://www.transfermarkt.com/will-erik-lira-join-valencia-cf-/thread/forum/154/thread_id/1207376" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Transfermarkt Rumour Thread #1207376</a></div>
+                </div>
+            </div>
+        </article>
+        
+
+        <article class="rumour-card" id="rumour-2">
+            <div class="card-header">
+                <div class="player-meta">
+                    <span class="rumour-id">#2</span>
+                    <h3 class="player-name">Marcel Regula</h3>
+                    <span class="market-value-badge">€ 7.00m</span>
+                </div>
+                <div class="card-badges">
+                    <span class="badge status-success">Successfully analyzed</span>
+                    <span class="badge badge-low">Low to Moderate (Routine Scouting / Low Imminence)</span>
+                </div>
+            </div>
+
+            <div class="clubs-matchup">
+                <div class="club-side departure">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/168.png?lm=1789459176" alt="Zaglebie Lubin crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Departure</span>
+                        <div class="club-title">Zaglebie Lubin</div>
+                    </div>
+                </div>
+                <div class="transfer-arrow">➔</div>
+                <div class="club-side arrival">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/16.png?lm=1789459167" alt="Borussia Dortmund crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Target Destination</span>
+                        <div class="club-title">Borussia Dortmund</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rumour-metrics">
+                <div class="metric-box">
+                    <span class="metric-label">Original TM Rumour Score</span>
+                    <span class="metric-value tm-score">14 %</span>
+                    <span class="metric-subtext">Community forum sentiment poll</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Detail Thread Posts</span>
+                    <span class="metric-value">11</span>
+                    <span class="metric-subtext">WILL MARCEL REGULA JOIN BORUSSIA DORTMUND?</span>
+                </div>
+                <div class="metric-box link-box">
+                    <span class="metric-label">Source Verification</span>
+                    <div style="margin-top: 6px;"><a href="https://www.transfermarkt.com/wechselt-marcel-regula-zu-borussia-dortmund-/thread/forum/154/thread_id/1202761" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></div>
+                </div>
+            </div>
+
+            <div class="assessment-section">
+                <h4 class="section-title">🤖 AI Credibility Assessment & Detailed Breakdown</h4>
+                <p class="assessment-explanation">The rumour originated in August 2026 from reputable Polish outlet Meczyki, reporting that Borussia Dortmund chief scout Bastian Schulz attended Zagłębie Lubin&#x27;s fixture against Legia Warsaw to observe 19-year-old Marcel Reguła. While the scouting presence is confirmed and reliable, standard scouting surveillance of European youth prospects is routine for BVB and does not constitute active transfer negotiations. Community analysis and subsequent squad movements reveal severe positional redundancy at Dortmund following the signing of Konstantinos Karetsas and an influx of U19 attacking midfielders.</p>
+
+                <div class="evidence-grid">
+                    <div class="evidence-box supporting">
+                        <h5>✓ Supporting Evidence</h5>
+                        <ul><li>Chief scout Bastian Schulz&#x27;s attendance at Zagłębie Lubin vs Legia Warsaw was directly verified by Polish media.</li><li>Meczyki is Poland&#x27;s leading sports news portal with strong access to domestic Ekstraklasa scouting developments.</li><li>Reguła&#x27;s age (19) and athletic profile match Dortmund&#x27;s historical scouting demographic.</li></ul>
+                    </div>
+                    <div class="evidence-box contradicting">
+                        <h5>⚠ Contradicting & Limiting Factors</h5>
+                        <ul><li>BVB recently finalized the acquisition of Konstantinos Karetsas in the identical attacking midfield profile.</li><li>Dortmund possesses extreme squad congestion in offensive midfield with existing young talents (Inacio, Kos, Lerma, Mathis, El Mala).</li><li>1. FC Köln was concurrently in more advanced, realistic pursuit of Reguła with greater first-team developmental opportunities.</li><li>Over two months have elapsed since the August scouting visit with zero subsequent bids, follow-up reports, or contract proposals.</li></ul>
+                    </div>
+                </div>
+
+                <div class="missing-info-box">
+                    <h5>❓ Missing Information & Key Uncertainties</h5>
+                    <ul><li>Zagłębie Lubin&#x27;s formal asking price and contract release clause parameters.</li><li>Whether Schulz&#x27;s scouting assessment recommended immediate acquisition or placed Reguła on a passive long-term watchlist.</li></ul>
+                </div>
+
+                <div class="sources-box">
+                    <h5>📚 Cited Sources & External Evidence:</h5>
+                    <div class="sources-links"><a href="https://www.meczyki.pl/newsy/pilka-nozna/gigant-obserwuje-polski-talent-wazna-postac-na-trybunach-nasz-news/309456" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Meczyki.pl News Report</a> &bull; <a href="https://www.transfermarkt.com/wechselt-marcel-regula-zu-borussia-dortmund-/thread/forum/154/thread_id/1202761" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Transfermarkt Rumour Thread #1202761</a></div>
+                </div>
+            </div>
+        </article>
+        
+
+        <article class="rumour-card" id="rumour-3">
+            <div class="card-header">
+                <div class="player-meta">
+                    <span class="rumour-id">#3</span>
+                    <h3 class="player-name">Alex Scott</h3>
+                    <span class="market-value-badge">€ 70.00m</span>
+                </div>
+                <div class="card-badges">
+                    <span class="badge status-success">Successfully analyzed</span>
+                    <span class="badge badge-high">Moderate to High (Confirmed Interest / Steep Winter Valuation)</span>
+                </div>
+            </div>
+
+            <div class="clubs-matchup">
+                <div class="club-side departure">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/989.png?lm=1791205195" alt="AFC Bournemouth crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Departure</span>
+                        <div class="club-title">AFC Bournemouth</div>
+                    </div>
+                </div>
+                <div class="transfer-arrow">➔</div>
+                <div class="club-side arrival">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/31.png?lm=1789459168" alt="Liverpool FC crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Target Destination</span>
+                        <div class="club-title">Liverpool FC</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rumour-metrics">
+                <div class="metric-box">
+                    <span class="metric-label">Original TM Rumour Score</span>
+                    <span class="metric-value tm-score">63 %</span>
+                    <span class="metric-subtext">Community forum sentiment poll</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Detail Thread Posts</span>
+                    <span class="metric-value">1</span>
+                    <span class="metric-subtext">WILL ALEX SCOTT JOIN LIVERPOOL FC?</span>
+                </div>
+                <div class="metric-box link-box">
+                    <span class="metric-label">Source Verification</span>
+                    <div style="margin-top: 6px;"><a href="https://www.transfermarkt.com/alex-scott-to-liverpool-fc-/thread/forum/154/thread_id/1207375" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></div>
+                </div>
+            </div>
+
+            <div class="assessment-section">
+                <h4 class="section-title">🤖 AI Credibility Assessment & Detailed Breakdown</h4>
+                <p class="assessment-explanation">Fabrizio Romano verified on October 14, 2026, that AFC Bournemouth has shifted its stance following meetings with Alex Scott&#x27;s agents, opening the door to a January departure should an exceptional proposal arrive. Romano confirmed that Liverpool were actively keen in July 2026 and continue to track the English midfielder. However, with BBC Sport reporting an expected asking price exceeding £100m, the substantial mid-season financial threshold represents a primary hurdle for Liverpool.</p>
+
+                <div class="evidence-grid">
+                    <div class="evidence-box supporting">
+                        <h5>✓ Supporting Evidence</h5>
+                        <ul><li>Reported by Fabrizio Romano, an internationally recognized Tier-1 transfer insider.</li><li>Independent valuation corroboration from BBC Sport setting the threshold at over £100m.</li><li>Confirmed historical precedent: Liverpool actively pursued Scott in July 2026 prior to Bournemouth&#x27;s initial refusal.</li><li>Bournemouth&#x27;s institutional stance softened from total refusal in the summer to entertaining marquee winter bids after agent dialogue.</li></ul>
+                    </div>
+                    <div class="evidence-box contradicting">
+                        <h5>⚠ Contradicting & Limiting Factors</h5>
+                        <ul><li>Asking valuation in excess of £100m is rarely triggered by Liverpool in a mid-season winter window.</li><li>Fierce competition from Chelsea FC, who previously lodged an official approach and may possess higher financial aggressiveness.</li><li>No formal bid or package negotiation has yet been submitted by Liverpool to Bournemouth for the January window.</li></ul>
+                    </div>
+                </div>
+
+                <div class="missing-info-box">
+                    <h5>❓ Missing Information & Key Uncertainties</h5>
+                    <ul><li>Liverpool&#x27;s winter budget prioritization between central midfield and defensive recruitments.</li><li>Alex Scott&#x27;s personal preference regarding tactical fit under Arne Slot versus Enzo Maresca at Chelsea.</li></ul>
+                </div>
+
+                <div class="sources-box">
+                    <h5>📚 Cited Sources & External Evidence:</h5>
+                    <div class="sources-links"><a href="https://x.com/FabrizioRomano/status/2110371714127319505" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Fabrizio Romano (X Report)</a> &bull; <a href="https://www.bbc.com/sport" target="_blank" rel="noopener noreferrer" class="source-link">🔗 BBC Sport (Pricing Appraisal Cited)</a> &bull; <a href="https://www.transfermarkt.com/alex-scott-to-liverpool-fc-/thread/forum/154/thread_id/1207375" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Transfermarkt Rumour Thread #1207375</a></div>
+                </div>
+            </div>
+        </article>
+        
+
+        <article class="rumour-card" id="rumour-4">
+            <div class="card-header">
+                <div class="player-meta">
+                    <span class="rumour-id">#4</span>
+                    <h3 class="player-name">Alex Scott</h3>
+                    <span class="market-value-badge">€ 70.00m</span>
+                </div>
+                <div class="card-badges">
+                    <span class="badge status-success">Successfully analyzed</span>
+                    <span class="badge badge-high">High (Chronologically Verified Bids &amp; Active Pursuit)</span>
+                </div>
+            </div>
+
+            <div class="clubs-matchup">
+                <div class="club-side departure">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/989.png?lm=1791205195" alt="AFC Bournemouth crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Departure</span>
+                        <div class="club-title">AFC Bournemouth</div>
+                    </div>
+                </div>
+                <div class="transfer-arrow">➔</div>
+                <div class="club-side arrival">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/631.png?lm=1789459205" alt="Chelsea FC crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Target Destination</span>
+                        <div class="club-title">Chelsea FC</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rumour-metrics">
+                <div class="metric-box">
+                    <span class="metric-label">Original TM Rumour Score</span>
+                    <span class="metric-value tm-score">17 %</span>
+                    <span class="metric-subtext">Community forum sentiment poll</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Detail Thread Posts</span>
+                    <span class="metric-value">3</span>
+                    <span class="metric-subtext">WILL ALEX SCOTT JOIN CHELSEA FC?</span>
+                </div>
+                <div class="metric-box link-box">
+                    <span class="metric-label">Source Verification</span>
+                    <div style="margin-top: 6px;"><a href="https://www.transfermarkt.com/alex-scott-zu-fc-chelsea-/thread/forum/154/thread_id/1191027" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></div>
+                </div>
+            </div>
+
+            <div class="assessment-section">
+                <h4 class="section-title">🤖 AI Credibility Assessment & Detailed Breakdown</h4>
+                <p class="assessment-explanation">Chelsea&#x27;s pursuit of Alex Scott is supported by a documented chronological paper trail across multiple top-tier sources. CaughtOffside first detailed Chelsea&#x27;s strategic interest in April 2026; Ben Jacobs reported an exclusive revelation on July 21, 2026, that Chelsea submitted a concrete approach exceeding £60m which Bournemouth rejected; and Fabrizio Romano confirmed on October 14, 2026, that Chelsea remain actively involved following fresh agent summits. The low legacy Transfermarkt score (17%) highlights why community votes lag behind verified insider reporting.</p>
+
+                <div class="evidence-grid">
+                    <div class="evidence-box supporting">
+                        <h5>✓ Supporting Evidence</h5>
+                        <ul><li>Verified multi-source timeline spanning April to October 2026 across CaughtOffside, Ben Jacobs, and Fabrizio Romano.</li><li>Concrete formal bidding history: Chelsea formally approached Bournemouth with a proposal exceeding £60m in July 2026.</li><li>Fabrizio Romano&#x27;s October 14 update confirms Chelsea remain actively in the race ahead of January 2027.</li><li>Aligns perfectly with Chelsea&#x27;s institutional recruitment strategy targeting high-ceiling domestic English talent under long-term contracts.</li></ul>
+                    </div>
+                    <div class="evidence-box contradicting">
+                        <h5>⚠ Contradicting & Limiting Factors</h5>
+                        <ul><li>Bournemouth&#x27;s escalated valuation of over £100m represents a major leap from Chelsea&#x27;s £60m summer valuation.</li><li>Premier League PSR / financial fair play limits require Chelsea to balance significant winter capital expenditure with departures.</li><li>Direct competition from Liverpool FC, who are also monitoring the midfielder.</li></ul>
+                    </div>
+                </div>
+
+                <div class="missing-info-box">
+                    <h5>❓ Missing Information & Key Uncertainties</h5>
+                    <ul><li>Whether Chelsea is prepared to meet the £100m+ requirement in January or will explore structured add-ons / player swaps.</li><li>Player contract length and wage parameters negotiated with Scott&#x27;s representation.</li></ul>
+                </div>
+
+                <div class="sources-box">
+                    <h5>📚 Cited Sources & External Evidence:</h5>
+                    <div class="sources-links"><a href="https://x.com/FabrizioRomano/status/2110371714127319505" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Fabrizio Romano (X Report, Oct 14)</a> &bull; <a href="https://x.com/JacobsBen/status/2079612379369812011" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Ben Jacobs (X Exclusive, Jul 21)</a> &bull; <a href="https://www.caughtoffside.com/2026/04/21/sources-chelsea-man-united-battle-for-english-midfielder/" target="_blank" rel="noopener noreferrer" class="source-link">🔗 CaughtOffside (Exclusive, Apr 21)</a> &bull; <a href="https://www.transfermarkt.com/alex-scott-zu-fc-chelsea-/thread/forum/154/thread_id/1191027" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Transfermarkt Rumour Thread #1191027</a></div>
+                </div>
+            </div>
+        </article>
+        
+
+        <article class="rumour-card" id="rumour-5">
+            <div class="card-header">
+                <div class="player-meta">
+                    <span class="rumour-id">#5</span>
+                    <h3 class="player-name">Kofi Amoako</h3>
+                    <span class="market-value-badge">€ 4.00m</span>
+                </div>
+                <div class="card-badges">
+                    <span class="badge status-success">Successfully analyzed</span>
+                    <span class="badge badge-low">Low (Hypothetical Media Conception / Rendered Obsolete by Injury Crisis)</span>
+                </div>
+            </div>
+
+            <div class="clubs-matchup">
+                <div class="club-side departure">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/41.png?lm=1789459168" alt="Hamburger SV crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Departure</span>
+                        <div class="club-title">Hamburger SV</div>
+                    </div>
+                </div>
+                <div class="transfer-arrow">➔</div>
+                <div class="club-side arrival">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/42.png?lm=1789459168" alt="Hannover 96 crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Target Destination</span>
+                        <div class="club-title">Hannover 96</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rumour-metrics">
+                <div class="metric-box">
+                    <span class="metric-label">Original TM Rumour Score</span>
+                    <span class="metric-value tm-score">47 %</span>
+                    <span class="metric-subtext">Community forum sentiment poll</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Detail Thread Posts</span>
+                    <span class="metric-value">11</span>
+                    <span class="metric-subtext">WILL KOFI AMOAKO JOIN HANNOVER 96?</span>
+                </div>
+                <div class="metric-box link-box">
+                    <span class="metric-label">Source Verification</span>
+                    <div style="margin-top: 6px;"><a href="https://www.transfermarkt.com/kofi-amoako-zu-hannover-96-/thread/forum/154/thread_id/1207339" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></div>
+                </div>
+            </div>
+
+            <div class="assessment-section">
+                <h4 class="section-title">🤖 AI Credibility Assessment & Detailed Breakdown</h4>
+                <p class="assessment-explanation">BILD published a speculative article on October 12, 2026, suggesting Hannover 96 could target 21-year-old defensive midfielder Kofi Amoako if they seek midfield reinforcements, citing his youth background in Hannover (2016-2019) and familiarity with sporting director Jonas Boldt. However, BILD explicitly noted that no contact whatsoever had occurred. Crucially, Hamburger SV midfielder Nicolai Remberg suffered a catastrophic cruciate ligament tear days later, elevating Amoako into HSV&#x27;s essential starting rotation and completely closing any possibility of a winter loan or transfer to 2. Bundesliga competitors.</p>
+
+                <div class="evidence-grid">
+                    <div class="evidence-box supporting">
+                        <h5>✓ Supporting Evidence</h5>
+                        <ul><li>Amoako previously played in Hannover 96&#x27;s youth academy between 2016 and 2019.</li><li>Hannover sporting director Jonas Boldt and Ralf Becker know Amoako&#x27;s profile from previous HSV affiliations.</li><li>Amoako had accrued only 3% of available league minutes during early autumn, initially prompting loan contemplation.</li></ul>
+                    </div>
+                    <div class="evidence-box contradicting">
+                        <h5>⚠ Contradicting & Limiting Factors</h5>
+                        <ul><li>BILD explicitly confirmed in the original article that no contact has been made between the clubs or representatives.</li><li>Amoako holds a long-term contract at Hamburger SV until June 30, 2030, after arriving for €1.8m from Dynamo Dresden.</li><li>HSV defensive midfield anchor Nicolai Remberg suffered a severe cruciate ligament injury, creating an immediate starting vacancy that Amoako is tasked to fill.</li><li>HSV has zero sporting or tactical incentive to loan or sell their sole natural defensive midfield depth to direct league rivals Hannover 96.</li><li>Forum community consensus and club correspondents unanimously categorize the rumour as a pure theoretical thought-experiment (&#x27;reines Gedankenspiel&#x27;).</li></ul>
+                    </div>
+                </div>
+
+                <div class="missing-info-box">
+                    <h5>❓ Missing Information & Key Uncertainties</h5>
+                    <ul><li>Whether Hannover 96 officially submits any inquiry or pivots to alternative second-tier targets.</li><li>Amoako&#x27;s confirmed match starts across remaining Hinrunde fixtures.</li></ul>
+                </div>
+
+                <div class="sources-box">
+                    <h5>📚 Cited Sources & External Evidence:</h5>
+                    <div class="sources-links"><a href="https://www.bild.de/sport/fussball/bundesliga-hannover-96-hat-naechsten-hsv-profi-im-visier-6accaeff8776d79fbd9ca024" target="_blank" rel="noopener noreferrer" class="source-link">🔗 BILD Sport Report</a> &bull; <a href="https://www.transfermarkt.com/kofi-amoako-zu-hannover-96-/thread/forum/154/thread_id/1207339" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Transfermarkt Rumour Thread #1207339</a></div>
+                </div>
+            </div>
+        </article>
+        
+
+        <article class="rumour-card" id="rumour-6">
+            <div class="card-header">
+                <div class="player-meta">
+                    <span class="rumour-id">#6</span>
+                    <h3 class="player-name">JJ Gabriel</h3>
+                    <span class="market-value-badge">€ -</span>
+                </div>
+                <div class="card-badges">
+                    <span class="badge status-success">Successfully analyzed</span>
+                    <span class="badge badge-high">High (Direct Inter-Club Contacts Confirmed by Top Tier Sources)</span>
+                </div>
+            </div>
+
+            <div class="clubs-matchup">
+                <div class="club-side departure">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/5242.png?lm=1789459435" alt="Manchester United U18 crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Departure</span>
+                        <div class="club-title">Manchester United U18</div>
+                    </div>
+                </div>
+                <div class="transfer-arrow">➔</div>
+                <div class="club-side arrival">
+                    <img src="https://img.a.transfermarkt.technology/wappen/medium/418.png?lm=1789459190" alt="Real Madrid crest" class="club-crest" loading="lazy" />
+                    <div>
+                        <span class="club-label">Target Destination</span>
+                        <div class="club-title">Real Madrid</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rumour-metrics">
+                <div class="metric-box">
+                    <span class="metric-label">Original TM Rumour Score</span>
+                    <span class="metric-value tm-score">24 %</span>
+                    <span class="metric-subtext">Community forum sentiment poll</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Detail Thread Posts</span>
+                    <span class="metric-value">2</span>
+                    <span class="metric-subtext">WILL JJ GABRIEL JOIN REAL MADRID?</span>
+                </div>
+                <div class="metric-box link-box">
+                    <span class="metric-label">Source Verification</span>
+                    <div style="margin-top: 6px;"><a href="https://www.transfermarkt.com/jj-gabriel-to-real-madrid-/thread/forum/154/thread_id/1206996" target="_blank" rel="noopener noreferrer" class="btn-thread">Open Thread ↗</a></div>
+                </div>
+            </div>
+
+            <div class="assessment-section">
+                <h4 class="section-title">🤖 AI Credibility Assessment & Detailed Breakdown</h4>
+                <p class="assessment-explanation">The rumour is substantiated by corroborating investigative reporting from ESPN and Fabrizio Romano. In September 2026, ESPN revealed that 15-year-old Manchester United prodigy JJ Gabriel informed club management of his desire to depart upon turning 16 on October 6, 2026. A crucial legal mechanism is Gabriel&#x27;s Irish passport, which allows him to complete an international transfer to continental European clubs under FIFA Article 19 despite post-Brexit restrictions on UK minors. On October 14, 2026, Fabrizio Romano reported that Real Madrid has intensified its pursuit and made direct contact with Manchester United.</p>
+
+                <div class="evidence-grid">
+                    <div class="evidence-box supporting">
+                        <h5>✓ Supporting Evidence</h5>
+                        <ul><li>Direct inter-club communication confirmed by Fabrizio Romano on October 14, 2026, between Real Madrid and Manchester United.</li><li>ESPN investigative scoop detailing the player&#x27;s formal notification to Old Trafford executives seeking an overseas move.</li><li>Possession of an Irish (EU) passport legally enables a continental transfer under FIFA regulations as of his 16th birthday on October 6, 2026.</li><li>Real Madrid&#x27;s specialized recruitment strategy prioritizing world-class teenage prospects for their academy-to-first-team pipeline.</li></ul>
+                    </div>
+                    <div class="evidence-box contradicting">
+                        <h5>⚠ Contradicting & Limiting Factors</h5>
+                        <ul><li>Manchester United strongly opposes losing the talent and refuses to release him without maximum regulatory resistance or compensation.</li><li>Intense European competition: FC Barcelona, Paris Saint-Germain, and Bayern Munich have met with Gabriel&#x27;s camp.</li><li>Complex FIFA youth development and training compensation packages could prolong final registration.</li></ul>
+                    </div>
+                </div>
+
+                <div class="missing-info-box">
+                    <h5>❓ Missing Information & Key Uncertainties</h5>
+                    <ul><li>The specific financial compensation structure agreed between Real Madrid and Manchester United.</li><li>Whether Manchester United presents an enhanced scholarship and professional pathway package to convince him to remain.</li></ul>
+                </div>
+
+                <div class="sources-box">
+                    <h5>📚 Cited Sources & External Evidence:</h5>
+                    <div class="sources-links"><a href="https://www.instagram.com/stories/fabriziorom/4007799739025237013?utm_source=ig_story_item_share&amp;rpxt=MXBvOHBxemx6MXdlOA==" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Fabrizio Romano (Instagram Story Update, Oct 14)</a> &bull; <a href="https://www.espn.com/soccer/story/_/id/49955685/jj-gabriel-barcelona-real-madrid-man-united-chelsea-man-city" target="_blank" rel="noopener noreferrer" class="source-link">🔗 ESPN Soccer (Investigative Report, Sep 16)</a> &bull; <a href="https://www.transfermarkt.com/jj-gabriel-to-real-madrid-/thread/forum/154/thread_id/1206996" target="_blank" rel="noopener noreferrer" class="source-link">🔗 Transfermarkt Rumour Thread #1206996</a></div>
+                </div>
+            </div>
+        </article>
+        
+        </section>
+
+        <footer>
+            <p>Football Transfer Rumours Analysis Engine &bull; Valid HTML5 &bull; Evidence-based verification without arbitrary score thresholds.</p>
+        </footer>
+    </div>
+</body>
+</html>

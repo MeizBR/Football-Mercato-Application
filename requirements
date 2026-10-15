@@ -5,4 +5,6 @@ openai
 newsapi-python
 pymongo
 dotenv
+google-genai
 ollama
+playwright (playwright install chromium)

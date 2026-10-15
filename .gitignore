@@ -65,3 +65,5 @@ coverage/
 # ========================
 docker-compose.override.yml
 rumours_details
+extracted_snapshot
+snapshot.tar

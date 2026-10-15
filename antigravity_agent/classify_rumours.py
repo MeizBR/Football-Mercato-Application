@@ -83,10 +83,6 @@ Test the workflow on one rumour first. Verify that the detail URL is extracted, 
 Finally, report the output file path and any scraping or analysis limitations.
 """,
     environment="remote",
-    # agent_config={
-    #     "type": "antigravity",
-    #     "max_total_tokens": MAX_TOKENS
-    # }
 )
 
 # Print the agent's final output

@@ -1,6 +1,9 @@
 import platform
 
 def get_machine_headers():
+    """
+    Returns the appropriate headers based on the machine's operating system.
+    """
     if platform.system() == "Linux":
         return {
             "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
